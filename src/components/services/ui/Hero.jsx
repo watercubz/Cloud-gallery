@@ -16,7 +16,7 @@ export default function Hero() {
             New
           </span>{" "}
           <span className="text-sm font-medium text-gray-100">
-            Cloud gallery, power by cloudinary
+            Cloud gallery power by cloudinary
           </span>
           <svg
             className="ml-2 w-5 h-5 text-zinc-900"
