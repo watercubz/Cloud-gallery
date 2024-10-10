@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function CloudinaryUploadWidget() {
   const [image, setImage] = useState(null);
@@ -62,7 +63,9 @@ export default function CloudinaryUploadWidget() {
       {error && <p className="text-red-500">{error}</p>}
       {uploadedImageUrl && (
         <div className="mt-4">
-          <p className="text-green-500">Image uploaded successfully!</p>
+          <p className="text-green-500">
+            {toast.success("Image uploaded successfully")}
+          </p>
           {/* <img
             src={uploadedImageUrl}
             alt="Uploaded"
