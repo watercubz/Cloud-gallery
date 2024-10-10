@@ -46,7 +46,7 @@ export default function CloudinaryUploadWidget() {
     <div className="grid place-items-center mr-4">
       <label className="flex items-center">
         <span className="py-2.5 px-5 me-2 mb-2 text-sm cursor-pointer">
-          Choose File
+          upload files
         </span>
         <input
           type="file"
