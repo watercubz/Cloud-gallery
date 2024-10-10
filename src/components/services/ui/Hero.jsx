@@ -9,10 +9,10 @@ export default function Hero() {
     <section className=" text-black">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
         <a
-          className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm  bg-red-600 rounded-full"
+          className="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm  bg-emerald-500 rounded-full"
           role="alert"
         >
-          <span className="text-xs bg-primary-600 rounded-full text-yellow-300 px-4 py-1.5 mr-3">
+          <span className="text-xs bg-primary-600 rounded-full text-yellow-200 font-bold px-4 py-1.5 mr-3">
             New
           </span>{" "}
           <span className="text-sm font-medium text-gray-100">
@@ -30,7 +30,7 @@ export default function Hero() {
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-amber-500">
           Power your Photos with AI
         </h1>
-        <p className="mb-8 text-lg font-normal text-yellow-400 lg:text-xl sm:px-16 xl:px-48">
+        <p className="mb-8 text-lg font-normal text-yellow-600 lg:text-xl sm:px-16 xl:px-48">
           Local Gallery is an application that connects to Cloudinary and you
           can upload your photos and through AI you can modify your images.
         </p>

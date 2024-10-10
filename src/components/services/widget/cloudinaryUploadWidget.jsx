@@ -45,7 +45,7 @@ export default function CloudinaryUploadWidget() {
   return (
     <div className="grid place-items-center mr-4">
       <label className="flex items-center">
-        <span className="py-2.5 px-5 me-2 mb-2 text-sm cursor-pointer">
+        <span className=" me-2 mb-2 text-sm cursor-pointer  hover:text-emerald-400">
           upload files
         </span>
         <input
