@@ -26,11 +26,13 @@ export default function CloudinaryUploadWidget() {
       console.log(data);
 
       if (response.ok) {
+        toast.success("Image upload succesfully!");
         setUploadedImageUrl(data.secure_url);
       } else {
         throw new Error(data.error.message);
       }
     } catch (error) {
+      toast.error("Image upload faild");
       setError(error.message);
     } finally {
       setUploading(false);
@@ -63,14 +65,7 @@ export default function CloudinaryUploadWidget() {
       {error && <p className="text-red-500">{error}</p>}
       {uploadedImageUrl && (
         <div className="mt-4">
-          <p className="text-green-500">
-            {toast.success("Image uploaded successfully")}
-          </p>
-          {/* <img
-            src={uploadedImageUrl}
-            alt="Uploaded"
-            className="mt-2 max-w-full h-auto rounded-lg shadow-md"
-          /> */}
+          {/* <p className="text-green-500">{isSuccess ? "success" : "pending"}</p> */}
         </div>
       )}
     </div>

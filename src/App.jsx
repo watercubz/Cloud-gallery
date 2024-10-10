@@ -6,11 +6,13 @@ import page from "./components/page";
 
 export default function App() {
   return (
-    <Routes>
+    <>
       <Toaster />
-      <Route path="/" Component={Home} />
-      <Route path="/App" Component={Sidebar} />
-      <Route path="/Profile" Component={page} />
-    </Routes>
+      <Routes>
+        <Route path="/" Component={Home} />
+        <Route path="/App" Component={Sidebar} />
+        <Route path="/Profile" Component={page} />
+      </Routes>
+    </>
   );
 }
