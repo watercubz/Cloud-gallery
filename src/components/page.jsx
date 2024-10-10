@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useNavigate } from "react-router-dom";
 import ErrorPage from "./services/ui/ErrorPage";
+
 export default function page() {
   const navigate = useNavigate();
 

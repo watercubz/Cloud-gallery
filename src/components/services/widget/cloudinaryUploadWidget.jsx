@@ -22,6 +22,8 @@ export default function CloudinaryUploadWidget() {
       });
 
       const data = await response.json();
+      console.log(data);
+
       if (response.ok) {
         setUploadedImageUrl(data.secure_url);
       } else {
@@ -33,6 +35,7 @@ export default function CloudinaryUploadWidget() {
       setUploading(false);
     }
   };
+  // console.log(uploadImage);
 
   const handleChange = (event) => {
     const file = event.target.files[0];
@@ -60,11 +63,11 @@ export default function CloudinaryUploadWidget() {
       {uploadedImageUrl && (
         <div className="mt-4">
           <p className="text-green-500">Image uploaded successfully!</p>
-          <img
+          {/* <img
             src={uploadedImageUrl}
             alt="Uploaded"
             className="mt-2 max-w-full h-auto rounded-lg shadow-md"
-          />
+          /> */}
         </div>
       )}
     </div>
