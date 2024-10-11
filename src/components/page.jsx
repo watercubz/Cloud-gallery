@@ -6,7 +6,7 @@ export default function page() {
   const navigate = useNavigate();
 
   const handleHome = () => {
-    navigate("/");
+    navigate("/App");
   };
   return (
     <div className="items-center justify-center flex">
