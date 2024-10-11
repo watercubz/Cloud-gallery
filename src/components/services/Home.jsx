@@ -11,7 +11,7 @@ export default function Home() {
     const timer = setTimeout(() => {
       setLoading(false);
       toast.success("Objecto 3D cargado 💚");
-    }, 300);
+    }, 400);
 
     return () => clearTimeout(timer);
   });

@@ -46,7 +46,7 @@ export default function GalleryComponent() {
     };
 
     fetchImages();
-  }, []);
+  }, [cloudinaryUrl]);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 300);
