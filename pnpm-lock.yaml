@@ -14,6 +14,9 @@ importers:
       '@cloudinary/url-gen':
         specifier: ^1.21.0
         version: 1.21.0
+      '@google/generative-ai':
+        specifier: ^0.21.0
+        version: 0.21.0
       '@splinetool/react-spline':
         specifier: 2.0.0
         version: 2.0.0(@splinetool/runtime@1.9.30)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -283,6 +286,10 @@ packages:
   '@eslint/plugin-kit@0.2.0':
     resolution: {integrity: sha512-vH9PiIMMwvhCx31Af3HiGzsVNULDbyVkHXwlemn/B0TFj/00ho3y55efXrUZTfQipxoHC5u4xq6zblww1zm1Ig==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@google/generative-ai@0.21.0':
+    resolution: {integrity: sha512-7XhUbtnlkSEZK15kN3t+tzIMxsbKm/dSkKBFalj+20NvPKe1kBY7mR2P7vuijEn+f06z5+A8bVGKO0v39cr6Wg==}
+    engines: {node: '>=18.0.0'}
 
   '@humanfs/core@0.19.0':
     resolution: {integrity: sha512-2cbWIHbZVEweE853g8jymffCA+NCMiuqeECeBBLm8dg2oFdjuGJhgN4UAbI+6v0CKbbhvtXA4qV8YR5Ji86nmw==}
@@ -1858,6 +1865,8 @@ snapshots:
   '@eslint/plugin-kit@0.2.0':
     dependencies:
       levn: 0.4.1
+
+  '@google/generative-ai@0.21.0': {}
 
   '@humanfs/core@0.19.0': {}
 

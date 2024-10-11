@@ -12,6 +12,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.13.0",
     "@cloudinary/url-gen": "^1.21.0",
+    "@google/generative-ai": "^0.21.0",
     "@splinetool/react-spline": "2.0.0",
     "@splinetool/runtime": "^1.9.30",
     "cloudinary-core": "^2.13.1",
