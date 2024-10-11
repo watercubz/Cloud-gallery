@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
+import Loading from "./Loading";
 
 const GalleryImage = ({ imageUrl }) => {
   return (
@@ -12,9 +13,15 @@ const GalleryImage = ({ imageUrl }) => {
     </div>
   );
 };
+
+const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;
+
+const secretCloud = import.meta.env.VITE_SECRET_API_APi_KEY;
+
 export default function GalleryComponent() {
   const [images, setImages] = useState([]);
-  const cloudinaryUrl = `/api/v1_1/dlcmvxm0v/resources/image/upload?prefix=cloud-folder&max_results=1000`;
+  const [loading, setLoading] = useState(true);
+  const cloudinaryUrl = `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
   // Ajusta según necesites
 
   useEffect(() => {
@@ -23,7 +30,7 @@ export default function GalleryComponent() {
         const response = await fetch(cloudinaryUrl, {
           method: "GET",
           headers: {
-            Authorization: `Basic ${btoa("")}`, // Reemplaza con tus credenciales
+            Authorization: `Basic ${btoa(`${secretCloud}`)}`, // Reemplaza con tus credenciales
           },
         });
 
@@ -41,15 +48,29 @@ export default function GalleryComponent() {
     fetchImages();
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 300);
+  }, []);
+
   return (
     <>
-      <div className="flex flex-wrap justify-center">
-        <div>
-          {images.map((image) => (
-            <GalleryImage key={image.public_id} imageUrl={image.secure_url} />
-          ))}
+      {loading ? (
+        <div className="flex items-center justify-center min-h-screen">
+          <p className="p-4 rounded flex items-center justify-center">
+            <Loading />
+          </p>
         </div>
-      </div>
+      ) : (
+        <div className="flex flex-wrap justify-center">
+          {images.length > 0 ? (
+            images.map((image) => (
+              <GalleryImage key={image.public_id} imageUrl={image.secure_url} />
+            ))
+          ) : (
+            <p></p>
+          )}
+        </div>
+      )}
     </>
   );
 }

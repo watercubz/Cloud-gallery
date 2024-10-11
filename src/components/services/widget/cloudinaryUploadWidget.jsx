@@ -2,17 +2,21 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
+const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;
+
+const presnetName = import.meta.env.VITE_CLOUDINARY_FOLDER;
+
 export default function CloudinaryUploadWidget({ onUpload }) {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(null);
 
   const uploadImage = async (file) => {
-    const url = `https://api.cloudinary.com/v1_1/dlcmvxm0v/image/upload`;
+    const url = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
 
     const formData = new FormData();
 
     formData.append("file", file);
-    formData.append("upload_preset", "upload-images");
+    formData.append("upload_preset", presnetName);
 
     try {
       setUploading(true);
