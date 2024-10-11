@@ -21,6 +21,9 @@ export default function Sidebar() {
     navigate("/Profile");
   };
 
+  const handleAI = () => {
+    navigate("/AI");
+  };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen font-sans">
       <h2 className="text-3xl font-bold mb-10 mt-10  text-amber-600">
@@ -171,6 +174,56 @@ export default function Sidebar() {
                       Profile
                     </button>
                   </div>
+
+                  <div
+                    role="button"
+                    className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+                  >
+                    <div className="grid place-items-center mr-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="200"
+                        height="200"
+                        viewBox="0 0 200 200"
+                        className="h-6 w-6"
+                      >
+                        <rect
+                          x="50"
+                          y="60"
+                          width="100"
+                          height="100"
+                          fill="#9e9e9e"
+                          rx="10"
+                        />
+                        <rect
+                          x="70"
+                          y="40"
+                          width="60"
+                          height="30"
+                          fill="#616161"
+                          rx="5"
+                        />
+                        <circle cx="80" cy="90" r="8" fill="#ffffff" />
+                        <circle cx="120" cy="90" r="8" fill="#ffffff" />
+                        <path
+                          d="M60,130 Q100,150 140,130"
+                          stroke="#ffffff"
+                          fill="none"
+                        />
+                        <rect
+                          x="80"
+                          y="160"
+                          width="40"
+                          height="10"
+                          fill="#ffeb3b"
+                        />
+                      </svg>
+                    </div>
+                    <button onClick={handleAI} className="hover:text-blue-500">
+                      AI
+                    </button>
+                  </div>
+
                   <div
                     role="button"
                     className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-blue-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"

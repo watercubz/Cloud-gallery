@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 import Home from "./components/services/Home";
 import Sidebar from "./components/services/ui/SideBar";
 import page from "./components/page";
-import OptimizeImg from "./components/services/AI/OptimizeImg";
+import PageAI from "./components/services/AI/PageAI";
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/" Component={Home} />
         <Route path="/App" Component={Sidebar} />
         <Route path="/Profile" Component={page} />
-        <Route path="/Test" Component={OptimizeImg} />
+        <Route path="/AI" Component={PageAI} />
       </Routes>
     </>
   );
