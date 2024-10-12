@@ -20,7 +20,7 @@ export default function TextGenerateIAI() {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    if (text.length === 0) {
+    if (text.length === 0 || null) {
       toast.error("recargue la web y intente otra vez");
     }
     setIaResponse(text);

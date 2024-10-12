@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import CloudinaryUploadWidget from "../widget/cloudinaryUploadWidget";
-import GalleryComponent from "./GalleryComponent";
+import GalleryComponent from "../ui/GalleryComponent";
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);

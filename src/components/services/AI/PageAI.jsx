@@ -1,4 +1,4 @@
-import TextGenerateIAI from "./TextGenerateIAI";
+import TextGenerateIAI from "./TextGenerateAI";
 import { useNavigate } from "react-router-dom";
 
 export default function PageAI() {
