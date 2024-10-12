@@ -1,6 +1,6 @@
 ## What is Cloud Gallery?
 
-### Local Gallery is an application that connects to Cloudinary and you can upload your photos and through AI you can modify your images.
+### Cloud Gallery is an app that connects to Cloudinary and from which you can upload your photos. It is also powered by AI with which you can generate Halloween horror stories and detect Halloween images.
 
 ## is it open source?
 
@@ -14,9 +14,6 @@
 
 - **Desktop**
   ![Cloud-demo](./src/assets/img/desktop.png)
-
-- **Movile**
-  ![Cloud-demo](./src/assets/img/Screenshot%202024-10-11%20125751.png)
 
 ## Setup
 
