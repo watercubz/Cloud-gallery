@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import Loading from "../ui/Loading";
 
 export default function TextGenerateIAI() {
   const [search, setSearch] = useState("");
@@ -14,7 +15,7 @@ export default function TextGenerateIAI() {
     setLoading(true);
     setIaResponse("");
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const prompt = `Eres una apasionante escritora de cuentos de todo tipo. Cuando alguien te pase el nombre '${search}', genera un cuento de terror aleatorio que incluya ese nombre. Asegúrate de crear una atmósfera inquietante y una trama intrigante.`;
+    const prompt = `Eres una apasionante escritora bilingue de cuentos de todo tipo. Cuando alguien te pase el nombre '${search}', genera un cuento de terror aleatorio que incluya ese nombre. Asegúrate de crear una atmósfera inquietante y una trama intrigante.`;
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
@@ -45,7 +46,9 @@ export default function TextGenerateIAI() {
       </div>
 
       {loading && iaResponse === "" ? (
-        <p className="mt-6 text-gray-600">Loading ...</p>
+        <p className="mt-6 text-gray-600">
+          <Loading />
+        </p>
       ) : (
         <div className="mt-6 max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md border border-gray-200">
           <p className="text-gray-800 text-lg font-medium break-words">

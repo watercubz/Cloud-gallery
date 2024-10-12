@@ -27,6 +27,7 @@ To use this project, you'll need your Cloudinary credentials. You will need the 
    VITE_PUBLIC_CLOUD_NAME="your_cloud_name_here"  # e.g., "my_cloud"
    VITE_SECRET_API_KEY="7374ee773ufyye3:2372372737273ee2372"  # API Key and Secret
    VITE_CLOUDINARY_FOLDER="your_folder_here"       # e.g., "uploads"
+   VITE_GOOGLE_GEMINI_API="your_gemini-api-key"    # e.g, "eru4uwu4422ueeesd32frt5434eerr"
 
    ```
 
