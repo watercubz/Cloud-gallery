@@ -3,8 +3,8 @@ import { Toaster } from "react-hot-toast";
 import Home from "./components/services/widget/Home";
 import Sidebar from "./components/services/Layouts/SideBar";
 import page from "./components/page";
-import PageAI from "./components/services/AI/PageAI";
-import ImageDetect from "./components/services/AI/ImageDetect";
+import PageAI from "./components/AI/PageAI";
+import ImageDetect from "./components/AI/ImageDetect";
 import Pricing from "./components/services/shared/Pricing";
 
 export default function App() {

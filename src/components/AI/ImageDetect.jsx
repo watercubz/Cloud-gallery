@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getBase64 } from "../../helpers/ImageHelper";
+import { getBase64 } from "../helpers/ImageHelper.js";
 import { useNavigate } from "react-router-dom";
-import Loading from "../ui/Loading";
+import Loading from "../services/ui/Loading.jsx";
 import toast from "react-hot-toast";
 export default function ImageDetect() {
   const [image, setImage] = useState("");

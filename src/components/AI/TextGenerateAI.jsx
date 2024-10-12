@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { saveLocalResponse, getLocalStorage } from "../../utils/storage.js";
-import Loading from "../ui/Loading";
+import { saveLocalResponse, getLocalStorage } from "../utils/storage.js";
+import Loading from "../services/ui/Loading.jsx";
 import toast from "react-hot-toast";
 
 export default function TextGenerateIAI() {
