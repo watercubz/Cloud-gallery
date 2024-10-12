@@ -15,9 +15,6 @@
 - **Desktop**
   ![Cloud-demo](./src/assets/img/desktop.png)
 
-- **Movile**
-  ![Cloud-demo](./src/assets/img/Screenshot%202024-10-11%20125751.png)
-
 ## Setup
 
 To use this project, you'll need your Cloudinary credentials. You will need the following:
