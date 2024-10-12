@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { saveLocalResponse, getLocalStorage } from "../../utils/storage.js";
 import Loading from "../ui/Loading";
 import toast from "react-hot-toast";
 
@@ -17,14 +18,23 @@ export default function TextGenerateIAI() {
     setIaResponse("");
     const model = genAI.getGenerativeModel({ model: "gemini-pro" });
     const prompt = `Eres una apasionante escritora bilingue de cuentos de todo tipo. Cuando alguien te pase el nombre '${search}', genera un cuento de terror aleatorio que incluya ese nombre. Asegúrate de crear una atmósfera inquietante y una trama intrigante.`;
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const text = response.text();
-    if (text.length === 0 || null) {
-      toast.error("recargue la web y intente otra vez");
+
+    try {
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
+
+      setIaResponse(text);
+      saveLocalResponse("aiResponse", text);
+      setSearch("");
+    } catch (error) {
+      toast.error(
+        "Error en la generación. Por favor, recargue la página y vuelva a intentar."
+      );
+      console.log(error);
+    } finally {
+      setLoading(false);
     }
-    setIaResponse(text);
-    setLoading(false);
   }
 
   const handleSearch = (e) => {
@@ -32,14 +42,28 @@ export default function TextGenerateIAI() {
   };
 
   const handleClick = () => {
-    AI();
+    if (search.trim() === "") {
+      toast.error("describa un cuento de hallowen");
+    } else {
+      AI();
+      setSearch("");
+    }
   };
+
+  useEffect(() => {
+    const saveResponse = getLocalStorage("aiResponse");
+    if (saveResponse) {
+      setIaResponse(saveResponse);
+    }
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center p-4">
       <div className="flex flex-col md:flex-row w-full max-w-lg">
         <input
           className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Describe tu cuento...."
+          value={search}
           onChange={(e) => handleSearch(e)}
           maxLength={40}
         />

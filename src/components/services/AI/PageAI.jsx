@@ -1,4 +1,4 @@
-import TextGenerateIAI from "./TextGenerateAI";
+import TextGenerateAI from "./TextGenerateAI";
 import { useNavigate } from "react-router-dom";
 
 export default function PageAI() {
@@ -36,7 +36,7 @@ export default function PageAI() {
           <span className="text-purple-800 dark:text-purple-500">👻</span>
         </h1>
 
-        <TextGenerateIAI />
+        <TextGenerateAI />
       </div>
     </>
   );

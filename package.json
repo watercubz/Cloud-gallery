@@ -17,6 +17,7 @@
     "@splinetool/runtime": "^1.9.30",
     "cloudinary-core": "^2.13.1",
     "cloudinary-react": "^1.8.1",
+    "flowbite-react": "^0.10.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",

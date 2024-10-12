@@ -8,7 +8,15 @@
 
 ## DEMO
 
-![Cloud-demo](./src/components/services/docs/img/git-cloud.gif)
+![Cloud-demo](./src/assets/img/git-cloud.gif)
+
+### photos
+
+- **Desktop**
+  ![Cloud-demo](./src/assets/img/desktop.png)
+
+- **Movile**
+  ![Cloud-demo](./src/assets/img/Screenshot%202024-10-11%20125751.png)
 
 ## Setup
 
