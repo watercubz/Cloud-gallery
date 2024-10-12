@@ -56,7 +56,7 @@ export default function TextGenerateIAI() {
           <Loading />
         </p>
       ) : (
-        <div className="mt-6 max-w-lg mx-auto p-4 bg-white rounded-lg shadow-md border border-gray-200">
+        <div className="mt-6 max-w-lg mx-auto p-4 bg-white rounded-lg border border-gray-400">
           <p className="text-gray-800 text-lg font-medium break-words">
             {iaResponse}
           </p>
