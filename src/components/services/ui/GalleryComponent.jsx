@@ -21,13 +21,16 @@ const secretCloud = import.meta.env.VITE_SECRET_API_APi_KEY;
 export default function GalleryComponent() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const cloudinaryUrl = `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
+  const apiUrl =
+    import.meta.env.MODE === "development"
+      ? `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`
+      : `https://api.cloudinary.com/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
   // Ajusta según necesites
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(cloudinaryUrl, {
+        const response = await fetch(apiUrl, {
           method: "GET",
           headers: {
             Authorization: `Basic ${btoa(`${secretCloud}`)}`, // Reemplaza con tus credenciales
@@ -46,7 +49,7 @@ export default function GalleryComponent() {
     };
 
     fetchImages();
-  }, [cloudinaryUrl]);
+  }, [apiUrl]);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 300);
