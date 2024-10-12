@@ -30,9 +30,12 @@ export default function PageAI() {
             />
           </svg>
         </button>
-        <h1 className="text-center text-2xl font-bold mb-4">
-          BUSCA PELICULAS DE TERROR A TRAVÉS DE AI
+        <h1 className="text-center text-3xl font-bold mb-4 text-orange-600 dark:text-orange-500">
+          <span className="text-purple-800 dark:text-purple-500">🎃</span>
+          GENERA CUENTOS DE TERROR A TRAVÉS DE AI
+          <span className="text-purple-800 dark:text-purple-500">👻</span>
         </h1>
+
         <TextGenerateIAI />
       </div>
     </>
