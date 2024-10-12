@@ -4,11 +4,13 @@ import { getBase64 } from "../helpers/ImageHelper.js";
 import { useNavigate } from "react-router-dom";
 import Loading from "../services/ui/Loading.jsx";
 import toast from "react-hot-toast";
+
 export default function ImageDetect() {
   const [image, setImage] = useState("");
   const [imageInineData, setImageInlineData] = useState("");
   const [aiResponse, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const genKey = import.meta.env.VITE_GOOGLE_GEMINI_API;
@@ -64,6 +66,7 @@ export default function ImageDetect() {
   const handleHome = () => {
     navigate("/App");
   };
+
   return (
     <div className="flex flex-col items-center mt-10 p-4 ">
       <button
