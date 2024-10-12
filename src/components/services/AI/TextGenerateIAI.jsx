@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import Loading from "../ui/Loading";
+import toast from "react-hot-toast";
 
 export default function TextGenerateIAI() {
   const [search, setSearch] = useState("");
@@ -19,6 +20,9 @@ export default function TextGenerateIAI() {
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
+    if (text.length === 0) {
+      toast.error("recargue la web y intente otra vez");
+    }
     setIaResponse(text);
     setLoading(false);
   }
@@ -37,6 +41,7 @@ export default function TextGenerateIAI() {
           className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
           placeholder="Describe tu cuento...."
           onChange={(e) => handleSearch(e)}
+          maxLength={40}
         />
         <button
           className="py-2.5 px-5 me-2 mb-2 m-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-100 md:mt-0"

@@ -28,11 +28,12 @@ export default function Hero() {
           </svg>
         </a>
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-amber-500">
-          Power your Photos with AI
+          Power your story with AI
         </h1>
         <p className="mb-8 text-lg font-normal text-yellow-600 lg:text-xl sm:px-16 xl:px-48">
-          Local Gallery is an application that connects to Cloudinary and you
-          can upload your photos and through AI you can modify your images.
+          Local Gallery is an app that connects to Cloudinary and from which you
+          can upload your photos. It is also powered by AI with which you can
+          generate Halloween horror stories and detect Halloween images.
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <button
