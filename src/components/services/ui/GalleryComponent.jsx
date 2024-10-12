@@ -14,26 +14,22 @@ const GalleryImage = ({ imageUrl }) => {
   );
 };
 
-const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;
-
 const secretCloud = import.meta.env.VITE_SECRET_API_APi_KEY;
+// const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAMe;
 
 export default function GalleryComponent() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const apiUrl =
-    import.meta.env.MODE === "development"
-      ? `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`
-      : `https://api.cloudinary.com/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
-  // Ajusta según necesites
+
+  const cloudinaryUrl = `/api/v1_1/dlcmvxm0v/resources/image/upload?prefix=cloud-folder&max_results=1000`;
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch(` ${cloudinaryUrl}`, {
           method: "GET",
           headers: {
-            Authorization: `Basic ${btoa(`${secretCloud}`)}`, // Reemplaza con tus credenciales
+            Authorization: `Basic ${btoa(`${secretCloud}`)}`,
           },
         });
 
@@ -49,7 +45,7 @@ export default function GalleryComponent() {
     };
 
     fetchImages();
-  }, [apiUrl]);
+  }, [cloudinaryUrl]);
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 300);

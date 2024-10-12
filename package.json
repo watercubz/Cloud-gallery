@@ -15,6 +15,7 @@
     "@google/generative-ai": "^0.21.0",
     "@splinetool/react-spline": "2.0.0",
     "@splinetool/runtime": "^1.9.30",
+    "axios": "^1.7.7",
     "cloudinary-core": "^2.13.1",
     "cloudinary-react": "^1.8.1",
     "flowbite-react": "^0.10.2",
