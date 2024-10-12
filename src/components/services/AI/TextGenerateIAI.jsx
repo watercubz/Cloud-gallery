@@ -22,6 +22,7 @@ export default function TextGenerateIAI() {
     setIaResponse(text);
     setLoading(false);
   }
+
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
