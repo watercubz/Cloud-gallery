@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://api.cloudinary.com/v1_1/dlcmvxm0v/:path*"
+      "destination": "https://api.cloudinary.com/v1_1/watercubz/:path*"
     }
   ]
 }
