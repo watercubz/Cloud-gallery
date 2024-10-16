@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { saveLocalResponse, getLocalStorage } from '../utils/storage.js';
 import Loading from '../services/ui/Loading.jsx';
 import toast from 'react-hot-toast';
 
@@ -17,7 +16,7 @@ export default function TextGenerateIAI() {
     setLoading(true);
     setIaResponse('');
     const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-    const prompt = `Eres un asistente virtual llamada "Carla" y también una escritora bilingüe apasionada por contar historias. Cuando el usuario te haga una pregunta o te pida un cuento, responde de manera natural y amigable. Si el usuario solicita un cuento de terror con el tema '${search}', genera una historia inquietante que incluya ese nombre. Asegúrate de crear una atmósfera aterradora y una trama intrigante, manteniendo siempre un tono de asistente.`;
+    const prompt = `Eres una apasionante escritora de cuentos de todo tipo. Cuando alguien te pase el nombre '${search}', genera un cuento de terror aleatorio que incluya ese nombre. Asegúrate de crear una atmósfera inquietante y una trama intrigante. recuerda si el ${search} contiene palabras onfensibas descriminacion, acoso, racismo, reponde con que no puedes generar nada que contenga ese tipo de contenido`;
 
     try {
       const result = await model.generateContent(prompt);
@@ -25,7 +24,6 @@ export default function TextGenerateIAI() {
       const text = response.text();
 
       setIaResponse(text);
-      saveLocalResponse('aiResponse', text);
       setSearch('');
     } catch (error) {
       toast.error(
@@ -51,10 +49,7 @@ export default function TextGenerateIAI() {
   };
 
   useEffect(() => {
-    const saveResponse = getLocalStorage('aiResponse');
-    if (saveResponse) {
-      setIaResponse(saveResponse);
-    }
+    setIaResponse();
   }, []);
 
   return (
@@ -65,7 +60,7 @@ export default function TextGenerateIAI() {
           placeholder="Describe tu cuento...."
           value={search}
           onChange={(e) => handleSearch(e)}
-          maxLength={40}
+          maxLength={70}
         />
         <button
           className="py-2.5 px-5 me-2 mb-2 m-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-100 md:mt-0"

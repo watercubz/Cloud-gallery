@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import GalleryComponent from "../ui/GalleryComponent";
-import DocsComponet from "../docs/DocsComponet";
-import LogoutComponent from "../shared/LogoutComponent";
-import ProfileComponent from "../shared/ProfileComponent";
-import ImboxComponent from "../shared/ImboxComponent";
-import ProductsComponent from "./ProductsComponent";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import GalleryComponent from '../ui/GalleryComponent';
+import DocsComponet from '../docs/DocsComponet';
+import LogoutComponent from '../shared/LogoutComponent';
+import ProfileComponent from '../shared/ProfileComponent';
+import ImboxComponent from '../shared/ImboxComponent';
+import ProductsComponent from './ProductsComponent';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -13,7 +13,7 @@ export default function Sidebar() {
   const navigate = useNavigate();
 
   const handleHome = () => {
-    navigate("/");
+    navigate('/');
   };
 
   return (

@@ -1,31 +1,24 @@
-import { useState } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getBase64 } from "../helpers/getBase64.js";
-import { useNavigate } from "react-router-dom";
-import Loading from "../services/ui/Loading.jsx";
-import toast from "react-hot-toast";
+import { useState } from 'react';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { getBase64 } from '../helpers/getBase64.js';
+import { useNavigate } from 'react-router-dom';
+import Loading from '../../components/services/ui/Loading.jsx';
+import toast from 'react-hot-toast';
 
 export default function ImageDetect() {
-  const [image, setImage] = useState("");
-  const [imageInineData, setImageInlineData] = useState("");
-  const [aiResponse, setResponse] = useState("");
+  const [image, setImage] = useState('');
+  const [imageInineData, setImageInlineData] = useState('');
+  const [aiResponse, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
-
   const navigate = useNavigate();
-
   const genKey = import.meta.env.VITE_GOOGLE_GEMINI_API;
-
   const genAI = new GoogleGenerativeAI(genKey);
-
   async function RunImage() {
     setLoading(true);
-    setResponse("");
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    setResponse('');
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
     const result = await model.generateContent([
-      "¿Qué hay en esta foto?, solo puedes responder a fotos con tematica de hallowen, terror, horror, de lo contrario dile que la foto no cumple con la tematica",
-
-      //TODO: proteccion para preguntas fuera de lugar y implementar la gneracion de imagenes con otro modelo
-
+      '¿Qué hay en esta foto?, solo puedes responder a fotos con tematica de hallowen, terror, horror, de lo contrario dile que la foto no cumple con la tematica',
       imageInineData,
     ]);
     const response = await result.response;
@@ -33,43 +26,36 @@ export default function ImageDetect() {
     setResponse(text);
     setLoading(false);
   }
-
   const handleClick = () => {
     RunImage();
   };
-
   const handleImageChange = (e) => {
-    toast.success("Imagen cargada");
+    toast.success('Imagen cargada');
     const file = e.target.files[0];
-
     // getting base64 from file to render in DOM
     getBase64(file)
       .then((result) => {
         setImage(URL.createObjectURL(result));
       })
       .catch((e) => console.log(e));
-
     // generating content model for Gemini Google AI
     fileToGenerativePart(file).then((image) => {
       setImageInlineData(image);
     });
   };
-
   async function fileToGenerativePart(file) {
     const base64EncodedDataPromise = new Promise((resolve) => {
       const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result.split(",")[1]);
-      reader.readAsDataURLL(file);
+      reader.onloadend = () => resolve(reader.result.split(',')[1]);
+      reader.readAsDataURL(file);
     });
-
     return {
       inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
     };
   }
   const handleHome = () => {
-    navigate("/App");
+    navigate('/App');
   };
-
   return (
     <div className="flex flex-col items-center mt-10 p-4 ">
       <button
@@ -116,7 +102,6 @@ export default function ImageDetect() {
       >
         ¿Qué hay en la foto?
       </button>
-
       {image && (
         <img
           src={image}
@@ -124,8 +109,7 @@ export default function ImageDetect() {
           alt="Selected"
         />
       )}
-
-      {loading && aiResponse === "" ? (
+      {loading && aiResponse === '' ? (
         <p className="mt-8 text-orange-600">
           <Loading />
         </p>
