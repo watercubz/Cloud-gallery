@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { getBase64 } from "../helpers/ImageHelper.js";
+import { getBase64 } from "../helpers/getBase64.js";
 import { useNavigate } from "react-router-dom";
 import Loading from "../services/ui/Loading.jsx";
 import toast from "react-hot-toast";
@@ -23,6 +23,9 @@ export default function ImageDetect() {
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent([
       "¿Qué hay en esta foto?, solo puedes responder a fotos con tematica de hallowen, terror, horror, de lo contrario dile que la foto no cumple con la tematica",
+
+      //TODO: proteccion para preguntas fuera de lugar y implementar la gneracion de imagenes con otro modelo
+
       imageInineData,
     ]);
     const response = await result.response;
@@ -56,7 +59,7 @@ export default function ImageDetect() {
     const base64EncodedDataPromise = new Promise((resolve) => {
       const reader = new FileReader();
       reader.onloadend = () => resolve(reader.result.split(",")[1]);
-      reader.readAsDataURL(file);
+      reader.readAsDataURLL(file);
     });
 
     return {

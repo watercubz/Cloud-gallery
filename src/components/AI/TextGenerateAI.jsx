@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import { saveLocalResponse, getLocalStorage } from "../utils/storage.js";
-import Loading from "../services/ui/Loading.jsx";
-import toast from "react-hot-toast";
+import { useState, useEffect } from 'react';
+import { GoogleGenerativeAI } from '@google/generative-ai';
+import { saveLocalResponse, getLocalStorage } from '../utils/storage.js';
+import Loading from '../services/ui/Loading.jsx';
+import toast from 'react-hot-toast';
 
 export default function TextGenerateIAI() {
-  const [search, setSearch] = useState("");
-  const [iaResponse, setIaResponse] = useState("");
+  const [search, setSearch] = useState('');
+  const [iaResponse, setIaResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
   const genKey = import.meta.env.VITE_GOOGLE_GEMINI_API;
@@ -15,9 +15,9 @@ export default function TextGenerateIAI() {
 
   async function AI() {
     setLoading(true);
-    setIaResponse("");
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-    const prompt = `Eres una apasionante escritora bilingue de cuentos de todo tipo. Cuando alguien te pase el nombre '${search}', genera un cuento de terror aleatorio que incluya ese nombre. Asegúrate de crear una atmósfera inquietante y una trama intrigante.`;
+    setIaResponse('');
+    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const prompt = `Eres un asistente virtual llamada "Carla" y también una escritora bilingüe apasionada por contar historias. Cuando el usuario te haga una pregunta o te pida un cuento, responde de manera natural y amigable. Si el usuario solicita un cuento de terror con el tema '${search}', genera una historia inquietante que incluya ese nombre. Asegúrate de crear una atmósfera aterradora y una trama intrigante, manteniendo siempre un tono de asistente.`;
 
     try {
       const result = await model.generateContent(prompt);
@@ -25,11 +25,11 @@ export default function TextGenerateIAI() {
       const text = response.text();
 
       setIaResponse(text);
-      saveLocalResponse("aiResponse", text);
-      setSearch("");
+      saveLocalResponse('aiResponse', text);
+      setSearch('');
     } catch (error) {
       toast.error(
-        "Error en la generación. Por favor, recargue la página y vuelva a intentar."
+        'Error en la generación. Por favor, recargue la página y vuelva a intentar.'
       );
       console.log(error);
     } finally {
@@ -42,16 +42,16 @@ export default function TextGenerateIAI() {
   };
 
   const handleClick = () => {
-    if (search.trim() === "") {
-      toast.error("describa un cuento de hallowen");
+    if (search.trim() === '') {
+      toast.error('describa un cuento de hallowen');
     } else {
       AI();
-      setSearch("");
+      setSearch('');
     }
   };
 
   useEffect(() => {
-    const saveResponse = getLocalStorage("aiResponse");
+    const saveResponse = getLocalStorage('aiResponse');
     if (saveResponse) {
       setIaResponse(saveResponse);
     }
@@ -75,7 +75,7 @@ export default function TextGenerateIAI() {
         </button>
       </div>
 
-      {loading && iaResponse === "" ? (
+      {loading && iaResponse === '' ? (
         <p className="mt-6 text-gray-600">
           <Loading />
         </p>

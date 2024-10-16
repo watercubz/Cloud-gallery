@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ts": "tsx ./src/components/helpers/Translate.ts"
   },
   "dependencies": {
     "@cloudinary/react": "^1.13.0",
@@ -23,7 +24,8 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-loader-spinner": "^6.1.6",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "tsx": "^4.19.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

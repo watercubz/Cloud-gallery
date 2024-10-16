@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
-import Loading from "./Loading";
+import { useState, useEffect } from 'react';
+import Loading from './Loading';
+import toast from 'react-hot-toast';
 
 const GalleryImage = ({ imageUrl }) => {
   return (
@@ -14,32 +15,36 @@ const GalleryImage = ({ imageUrl }) => {
   );
 };
 
-const secretCloud = import.meta.env.VITE_SECRET_API_APi_KEY;
-// const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAMe;
+const secretCloud = import.meta.env.VITE_SECRET_API_API_KEY;
+const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;
 
 export default function GalleryComponent() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const cloudinaryUrl = `/api/v1_1/dlcmvxm0v/resources/image/upload?prefix=cloud-folder&max_results=1000`;
+  const cloudinaryUrl = `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
+
+  // TODO: intentar implementar la api de cloundary para produccion por el error de cors
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
         const response = await fetch(` ${cloudinaryUrl}`, {
-          method: "GET",
+          method: 'GET',
           headers: {
             Authorization: `Basic ${btoa(`${secretCloud}`)}`,
           },
         });
 
         if (!response.ok) {
-          throw new Error("Error fetching images");
+          throw new Error('Error fetching images');
         }
 
         const data = await response.json();
+        toast.success('imagenes cargadas');
         setImages(data.resources);
       } catch (error) {
+        toast.error('Error', error);
         console.error(error);
       }
     };
@@ -63,10 +68,13 @@ export default function GalleryComponent() {
         <div className="flex flex-wrap justify-center">
           {images.length > 0 ? (
             images.map((image) => (
-              <GalleryImage key={image.public_id} imageUrl={image.secure_url} />
+              <GalleryImage
+                key={image.public2_id}
+                imageUrl={image.secure_url}
+              />
             ))
           ) : (
-            <p></p>
+            <p>Error api prodction</p>
           )}
         </div>
       )}

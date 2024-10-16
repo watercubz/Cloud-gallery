@@ -1,3 +1,4 @@
+// getBase64 permite leer informacion guardada en buffer y si hay una error lo eyectamos
 export const getBase64 = (file) =>
   new Promise(function (resolve, reject) {
     let render = new FileReader();

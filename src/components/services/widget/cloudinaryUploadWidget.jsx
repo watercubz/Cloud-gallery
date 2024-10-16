@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import toast from "react-hot-toast";
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;
 
-const presnetName = import.meta.env.VITE_CLOUDINARY_FOLDER;
+const presentName = import.meta.env.VITE_CLOUDINARY_FOLDER;
 
 export default function CloudinaryUploadWidget({ onUpload }) {
   const [uploading, setUploading] = useState(false);
@@ -15,19 +15,19 @@ export default function CloudinaryUploadWidget({ onUpload }) {
 
     const formData = new FormData();
 
-    formData.append("file", file);
-    formData.append("upload_preset", presnetName);
+    formData.append('file', file);
+    formData.append('upload_preset', presentName);
 
     try {
       setUploading(true);
       const response = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         body: formData,
       });
 
       const data = await response.json();
       if (response.ok) {
-        toast.success("Image uploaded successfully!");
+        toast.success('Image uploaded successfully!');
 
         // Llamar a la función onUpload para actualizar la galería
         if (onUpload) {
@@ -37,7 +37,7 @@ export default function CloudinaryUploadWidget({ onUpload }) {
         throw new Error(data.error.message);
       }
     } catch (error) {
-      toast.error("Image upload failed");
+      toast.error('Image upload failed');
       setError(error.message);
     } finally {
       setUploading(false);
