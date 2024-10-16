@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 export default function Hero() {
   const navigate = useNavigate();
 
   const handleApp = () => {
-    navigate("/App");
+    navigate('/App');
   };
   return (
     <section className=" text-black">
@@ -14,7 +14,7 @@ export default function Hero() {
         >
           <span className="text-xs bg-primary-600 rounded-full text-yellow-200 font-bold px-4 py-1.5 mr-3">
             New
-          </span>{" "}
+          </span>{' '}
           <span className="text-sm font-medium text-gray-100">
             Cloud gallery power by cloudinary
           </span>
@@ -31,7 +31,7 @@ export default function Hero() {
           Power your story with AI
         </h1>
         <p className="mb-8 text-lg font-normal text-yellow-600 lg:text-xl sm:px-16 xl:px-48">
-          Local Gallery is an app that connects to Cloudinary and from which you
+          Cloud Gallery is an app that connects to Cloudinary and from which you
           can upload your photos. It is also powered by AI with which you can
           generate Halloween horror stories and detect Halloween images.
         </p>
