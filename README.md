@@ -8,12 +8,12 @@
 
 ## DEMO
 
-![Cloud-demo](./src/assets/img/git-cloud.gif)
+![Cloud-demo](./src/assets/img/cloud-gif-2.gif)
 
 ### photos
 
 - **Desktop**
-  ![Cloud-demo](./src/assets/img/desktop.png)
+  ![Cloud-demo](./src/assets/img/cloud-gallery-2.png)
 
 ## Setup
 

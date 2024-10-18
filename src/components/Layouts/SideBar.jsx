@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GalleryComponent from '../ui/GalleryComponent';
+import GalleryComponent from '../pages/GalleryComponent';
 import DocsComponet from '../docs/DocsComponet';
-import LogoutComponent from '../shared/LogoutComponent';
+import LogoutComponent from '../pages/LogoutComponent';
 import ProfileComponent from '../shared/ProfileComponent';
 import ImboxComponent from '../shared/ImboxComponent';
 import ProductsComponent from './ProductsComponent';
+import PricingButton from '../shared/Pricing-button';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -17,13 +18,13 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-sans">
+    <div className="flex flex-col items-center justify-center min-h-screen font-sans bg-gray-950">
       <h2 className="text-3xl font-bold mb-10 mt-10  text-amber-600">
         Gallery Photos
       </h2>
       <div className="flex justify-end w-full">
         <button
-          className="absolute top-4 right-4 py-2 px-4 text-black transition-colors duration-150 border border-zinc-500 rounded-lg bg-white hover:bg-gray-100 z-20"
+          className="absolute top-4 rigth-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
           onClick={() => setOpen(true)}
         >
           <svg
@@ -43,7 +44,7 @@ export default function Sidebar() {
           </svg>
         </button>
         <button
-          className="absolute top-4 left-4 py-2 px-4 text-black transition-colors duration-150 border border-zinc-500 rounded-lg bg-white hover:bg-gray-100 z-20"
+          className="absolute top-4 left-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
           onClick={handleHome}
         >
           <svg
@@ -70,10 +71,10 @@ export default function Sidebar() {
           <div className="absolute inset-0 bg-gray-500 bg-opacity-75"></div>
           <section className="absolute inset-y-0 right-0 pl-10 max-w-full flex">
             <div className="w-screen max-w-md transform transition-transform duration-300">
-              <div className="h-full flex flex-col py-6 bg-white shadow-xl">
+              <div className="h-full flex flex-col py-6 bg-gray-950 shadow-xl">
                 <div className="flex items-center justify-between px-4">
-                  <h2 className="text-xl font-bold text-yellow-600">
-                    Cloud Local
+                  <h2 className="text-4 font-medium text-amber-700">
+                    Cloud Gallery
                   </h2>
                   <button
                     onClick={() => setOpen(false)}
@@ -96,9 +97,6 @@ export default function Sidebar() {
                     </svg>
                   </button>
                 </div>
-                <div className="mt-4 px-4">
-                  <p className="ml-2 text-gray-400">CLOUD WITH CLOUDINARY</p>
-                </div>
                 <div className="mt-5 px-4 h-full overflow-auto">
                   <div className="h-full px-3 py-4 overflow-y-auto">
                     <ul className="space-y-2 font-medium">
@@ -106,6 +104,7 @@ export default function Sidebar() {
                       <ProfileComponent />
                       <ImboxComponent />
                       <ProfileComponent />
+                      <PricingButton />
                       <DocsComponet />
                       <LogoutComponent />
                     </ul>
@@ -118,7 +117,7 @@ export default function Sidebar() {
       )}
 
       {/* Main content area */}
-      <main className="flex justify-center items-center min-h-screen font-sans py-6">
+      <main className="flex justify-center items-center min-h-screen font-sans py-6 bg-gray-950">
         <GalleryComponent />
       </main>
     </div>

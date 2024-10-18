@@ -1,7 +1,7 @@
-import { useState } from "react";
-import AiText from "../ui/AiText";
-import AImage from "../ui/AImage";
-import UploadFile from "../ui/UploadFile";
+import { useState } from 'react';
+import AiText from '../ui/AiText';
+import AImage from '../ui/AImage';
+import UploadFile from '../ui/UploadFile';
 
 export function SidebarDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,12 +14,12 @@ export function SidebarDropdown() {
     <div className="">
       <button
         onClick={toggleDropdown}
-        className="flex items-center w-full p-2 text-left text-gray-900 rounded-lg"
+        className="flex items-center w-full p-2 text-left text-white rounded-lg"
       >
         Products
         <svg
           className={`w-5 h-5 ml-auto transform transition-transform duration-200 ${
-            isOpen ? "rotate-180" : ""
+            isOpen ? 'rotate-180' : ''
           }`}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"

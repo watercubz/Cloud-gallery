@@ -1,12 +1,12 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useNavigate } from "react-router-dom";
-import ErrorPage from "./services/ui/ErrorPage";
+import { useNavigate } from 'react-router-dom';
+import ErrorPage from '../ui/ErrorPage';
 
 export default function page() {
   const navigate = useNavigate();
 
   const handleHome = () => {
-    navigate("/App");
+    navigate('/App');
   };
   return (
     <div className="items-center justify-center flex">

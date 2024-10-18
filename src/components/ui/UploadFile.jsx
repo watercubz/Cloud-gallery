@@ -1,9 +1,9 @@
-import CloudinaryUploadWidget from "../widget/cloudinaryUploadWidget";
+import CloudinaryUploadWidget from '../services/widget/cloudinaryUploadWidget';
 export default function UploadFile() {
   return (
     <div
       role="button"
-      className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+      className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all text-white hover:bg-opacity-80focus:bg-opacity-80 outline-none"
     >
       <div className="grid place-items-center mr-4">
         <svg

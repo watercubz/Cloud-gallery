@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import Loading from '../services/ui/Loading.jsx';
+import Loading from '../ui/Loading.jsx';
 import toast from 'react-hot-toast';
 
 export default function TextGenerateIAI() {
