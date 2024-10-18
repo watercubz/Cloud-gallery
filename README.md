@@ -1,6 +1,6 @@
 ## What is Cloud Gallery?
 
-### Cloud Gallery is an app that connects to Cloudinary and from which you can upload your photos. It is also powered by AI with which you can generate Halloween horror stories and detect Halloween images.
+### Cloud Gallery is an app where you can upload your funniest and craziest photos and share them with everyone in the world on a public cloud. It is also powered by AI with which you can generate all kinds of stories and analyze the content of a photo.
 
 ## is it open source?
 
