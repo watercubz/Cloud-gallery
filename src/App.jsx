@@ -3,9 +3,9 @@ import { Toaster } from 'react-hot-toast';
 import Home from './components/pages/Home';
 import page from './components/pages/page';
 import Sidebar from './components/Layouts/SideBar';
-import PageAI from './components/AI/PageAI';
-import ImageDetect from './components/AI/ImageDetect';
+import PageText from './components/AI/PageText';
 import Pricing from './components/pages/Pricing';
+import PageImage from './components/AI/Page-image';
 
 export default function App() {
   return (
@@ -15,8 +15,8 @@ export default function App() {
         <Route path="/" Component={Home} />
         <Route path="/App" Component={Sidebar} />
         <Route path="/Profile" Component={page} />
-        <Route path="/AI" Component={PageAI} />
-        <Route path="/Image" Component={ImageDetect} />
+        <Route path="/AI" Component={PageText} />
+        <Route path="/Image" Component={PageImage} />
         <Route path="/Pricing" Component={Pricing} />
       </Routes>
     </>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import { getBase64 } from '../helpers/getBase64.js';
-import { useNavigate } from 'react-router-dom';
 import Loading from '../ui/Loading.jsx';
 import toast from 'react-hot-toast';
 
@@ -10,8 +9,6 @@ export default function ImageDetect() {
   const [imageInineData, setImageInlineData] = useState('');
   const [aiResponse, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
 
   const genKey = import.meta.env.VITE_GOOGLE_GEMINI_API;
 
@@ -66,35 +63,9 @@ export default function ImageDetect() {
       inlineData: { data: await base64EncodedDataPromise, mimeType: file.type },
     };
   }
-  const handleHome = () => {
-    navigate('/App');
-  };
 
   return (
-    <div className="flex flex-col items-center mt-10 p-4 ">
-      <button
-        className="absolute top-4 left-4 py-2 px-4 text-black transition-colors duration-150 border border-zinc-500 rounded-lg bg-white hover:bg-gray-100 z-20"
-        onClick={handleHome}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-      <h2 className="text-3xl font-bold text-orange-700 mb-6">
-        🎃 PREGUNTALE ¿QUÉ HAY EN UNA FOTO DE HALLOWEEN? 🎃
-      </h2>
+    <div className="flex flex-col items-center mt-10 p-4 bg-gray-900">
       <div className="flex flex-col mb-4 w-full md:w-1/2">
         <input
           type="file"
@@ -105,13 +76,13 @@ export default function ImageDetect() {
         />
         <label
           htmlFor="file-upload"
-          className="cursor-pointer rounded p-2 mb-4 border border-gray-300 bg-gray-200 text-orange-700 font-bold hover:bg-gray-300"
+          className="cursor-pointer rounded p-2 mb-4 border text-white border-gray-300 bg-gray-900 hover:text-gray-300"
         >
           Subir tu imagen
         </label>
       </div>
       <button
-        className="py-2.5 px-5 text-sm font-medium text-white bg-orange-600 rounded-lg border border-gray-200 hover:bg-orange-500 focus:outline-none focus:ring-4 focus:ring-purple-300 mb-4"
+        className="py-2.5 px-5 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-purple-300 mb-4"
         onClick={handleClick}
       >
         ¿Qué hay en la foto?

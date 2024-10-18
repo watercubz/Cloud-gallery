@@ -54,33 +54,36 @@ export default function TextGenerateIAI() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center p-4">
-      <div className="flex flex-col md:flex-row w-full max-w-lg">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-900 text-white">
+      <div className="flex flex-col md:flex-row w-full max-w-lg space-y-4 md:space-y-0 md:space-x-4">
         <input
-          className="block w-full p-4 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
-          placeholder="Describe tu cuento...."
+          className="block w-full p-4 text-sm text-white border border-gray-500 rounded-lg bg-gray-800 outline-none"
+          placeholder="Describe tu historia...."
           value={search}
-          onChange={(e) => handleSearch(e)}
+          onChange={handleSearch}
           maxLength={70}
+          autoFocus={true}
         />
         <button
-          className="py-2.5 px-5 me-2 mb-2 m-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-orange-500 focus:z-10 focus:ring-4 focus:ring-gray-100 md:mt-0"
-          onClick={() => handleClick()}
+          className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-lg  border-gray-200"
+          onClick={handleClick}
         >
           Generar
         </button>
       </div>
 
-      {loading && iaResponse === '' ? (
-        <p className="mt-6 text-gray-600">
+      {loading ? (
+        <div className="mt-6">
           <Loading />
-        </p>
-      ) : (
-        <div className="mt-6 max-w-lg mx-auto p-4 bg-white rounded-lg border border-gray-400">
-          <p className="text-gray-800 text-lg font-medium break-words">
-            {iaResponse}
-          </p>
         </div>
+      ) : (
+        iaResponse && (
+          <div className="mt-6 max-w-lg w-full mx-auto p-4 bg-gray-800 rounded-lg border border-gray-700">
+            <p className="text-white text-lg font-medium break-words">
+              {iaResponse}
+            </p>
+          </div>
+        )
       )}
     </div>
   );
