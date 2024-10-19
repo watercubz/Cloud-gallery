@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import Loading from '../ui/Loading';
+import { useNavigate } from 'react-router-dom';
+
 const GalleryImage = ({ imageUrl }) => {
   return (
     <div className="inline-block">
@@ -23,6 +25,8 @@ export default function GalleryComponent() {
   const [agreed, setAgreeget] = useState(() => {
     return localStorage.getItem('agreed') === 'true' || false;
   });
+
+  const navigate = useNavigate();
 
   const cloudinaryUrl = `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
 
@@ -51,6 +55,10 @@ export default function GalleryComponent() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleCancel = () => {
+    navigate('/');
   };
 
   useEffect(() => {
@@ -89,13 +97,18 @@ export default function GalleryComponent() {
                   </p>
                 </div>
               </div>
-              <div className="text-center md:text-right mt-4 md:flex md:justify-end">
+              <div className="text-center md:text-right mt-4 md:flex md:justify-end gap-5">
                 <button
-                  id="confirm-delete-btn"
-                  className="block w-full md:inline-block md:w-auto px-4 py-3 md:py-2 bg-gray-700 text-white rounded-lg font-semibold text-sm md:ml-2 md:order-2 hover:text-gray-300"
+                  className="block w-full md:inline-block md:w-auto px-4 py-3 md:py-2 bg-red-500 text-gray-100 hover:text-red-200 rounded-lg font-semibold text-sm md:ml-2 md:order-2"
                   onClick={handleAgreement}
                 >
                   confirmar
+                </button>
+                <button
+                  className="block w-full md:inline-block md:w-auto px-4 py-3 md:py-2 bg-gray-700 text-white rounded-lg font-semibold text-sm md:ml-2 md:order-2 hover:text-gray-300"
+                  onClick={handleCancel}
+                >
+                  Denegar
                 </button>
               </div>
             </div>
