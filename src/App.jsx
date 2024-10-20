@@ -1,24 +1,70 @@
-import { Routes, Route } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import Home from './components/pages/Home';
-import page from './components/pages/page';
-import Sidebar from './components/Layouts/SideBar';
-import PageText from './components/AI/PageText';
-import Pricing from './components/pages/Pricing';
-import PageImage from './components/AI/Page-image';
+import ProtectedRoute from './features/auth/components/ProtecteRoutes';
+import AuthComponent from './features/auth/components/AuthComponent';
+import Home from './features/gallery/pages/Home';
+import Sidebar from './features/Layouts/SideBar';
+import Page from './features/ai/pages/Page';
+import Pricing from './features/pricing/pages/Pricing';
+import PageImage from './features/ai/components/PageImage';
+import PageAI from './features/ai/components/PageText';
 
 export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home />,
+    },
+    {
+      path: '/auth',
+      element: <AuthComponent />,
+    },
+    {
+      path: '/app',
+      element: (
+        <ProtectedRoute>
+          <Sidebar />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/profile',
+      element: (
+        <ProtectedRoute>
+          <Page />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/ai',
+      element: (
+        <ProtectedRoute>
+          <PageAI />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/image',
+      element: (
+        <ProtectedRoute>
+          <PageImage />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/pricing',
+      element: (
+        <ProtectedRoute>
+          <Pricing />
+        </ProtectedRoute>
+      ),
+    },
+  ]);
+
   return (
     <>
       <Toaster />
-      <Routes>
-        <Route path="/" Component={Home} />
-        <Route path="/App" Component={Sidebar} />
-        <Route path="/Profile" Component={page} />
-        <Route path="/AI" Component={PageText} />
-        <Route path="/Image" Component={PageImage} />
-        <Route path="/Pricing" Component={Pricing} />
-      </Routes>
+      <RouterProvider router={router} />
     </>
   );
 }
