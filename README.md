@@ -13,7 +13,7 @@
 ### photos
 
 - **Desktop**
-  ![Cloud-demo](./src/assets/img/cloud-gallery-2.png)
+  ![Cloud-demo](./src/assets/img/image.png)
 
 ## Setup
 
@@ -63,6 +63,10 @@ We welcome contributions to Cloud Gallery! Here’s how you can help:
    ```bash
    git clone https://github.com/your-username/Cloud-gallery.git
    ```
+
+## Project Structure
+
+[project Structure]('./ARCHITECTURE.md')
 
 ### By following these guidelines, you help us improve the project and make it better for everyone!
 
