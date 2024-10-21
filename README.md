@@ -66,7 +66,7 @@ We welcome contributions to Cloud Gallery! Here’s how you can help:
 
 ## Project Structure
 
-[project Structure]('./ARCHITECTURE.md')
+[project Structure]('ARCHITECTURE.md')
 
 ### By following these guidelines, you help us improve the project and make it better for everyone!
 
