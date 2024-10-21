@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GalleryComponent from '../pages/GalleryComponent';
-import DocsComponet from '../docs/DocsComponet';
-import LogoutComponent from '../pages/LogoutComponent';
-import ProfileComponent from '../shared/ProfileComponent';
-import ImboxComponent from '../shared/ImboxComponent';
-import ProductsComponent from './ProductsComponent';
-import PricingButton from '../shared/Pricing-button';
+import GalleryComponent from '../gallery/components/GalleryComponent';
+import DocsComponet from '../docs/components/DocsComponet';
+import LogoutComponent from '../auth/pages/LogoutComponent';
+import ProfileComponent from '../profile/components/ProfileComponent';
+import ImboxComponent from '../auth/components/ImboxComponent';
+import ProductsComponent from '../Layouts/ProductsComponent';
+import PricingButton from '../pricing/components/PricingButton';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -101,7 +101,6 @@ export default function Sidebar() {
                   <div className="h-full px-3 py-4 overflow-y-auto">
                     <ul className="space-y-2 font-medium">
                       <ProductsComponent />
-                      <ProfileComponent />
                       <ImboxComponent />
                       <ProfileComponent />
                       <PricingButton />

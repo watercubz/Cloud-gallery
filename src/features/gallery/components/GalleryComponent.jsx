@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-import Loading from '../ui/Loading';
+import Loading from '../../ui/Loading';
 import { useNavigate } from 'react-router-dom';
 
 const GalleryImage = ({ imageUrl }) => {
@@ -15,6 +15,13 @@ const GalleryImage = ({ imageUrl }) => {
     </div>
   );
 };
+
+function fb(n) {
+  if (n < 0) return n;
+
+  fb(n - 1) + fb(n - 2);
+}
+console.log(fb(16));
 
 const secretCloud = import.meta.env.VITE_SECRET_API_API_KEY;
 const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;

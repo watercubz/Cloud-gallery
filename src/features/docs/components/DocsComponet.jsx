@@ -1,4 +1,4 @@
-import DocsButton from './Docs-button';
+import DocsButton from './DocsButton';
 export default function DocsComponets() {
   return (
     <li>

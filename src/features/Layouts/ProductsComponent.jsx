@@ -1,4 +1,4 @@
-import { SidebarDropdown } from './Sidebar-dropdonw';
+import { SidebarDropdown } from './SidebarDropdonw';
 export default function ProductsComponents() {
   return (
     <li>

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
-import Chess from '../services/3D/Chess';
-import Hero from '../Layouts/Hero';
-import Loading from '../ui/Loading';
+import Chess from '../../../services/3D/Chess';
+import Hero from '../../Layouts/Hero';
+import Loading from '../../ui/Loading';
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
