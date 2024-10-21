@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import GalleryComponent from '../gallery/components/GalleryComponent';
 import DocsComponet from '../docs/components/DocsComponet';
 import LogoutComponent from '../auth/pages/LogoutComponent';
-import ProfileComponent from '../profile/components/ProfileComponent';
+import Profile from '../profile/pages/Profile';
 import ImboxComponent from '../auth/components/ImboxComponent';
 import ProductsComponent from '../Layouts/ProductsComponent';
 import PricingButton from '../pricing/components/PricingButton';
@@ -102,7 +102,7 @@ export default function Sidebar() {
                     <ul className="space-y-2 font-medium">
                       <ProductsComponent />
                       <ImboxComponent />
-                      <ProfileComponent />
+                      <Profile />
                       <PricingButton />
                       <DocsComponet />
                       <LogoutComponent />

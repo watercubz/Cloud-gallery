@@ -15,6 +15,8 @@ export default function AuthComponent() {
       if (error) {
         console.error('Error fetching session:', error);
         setLoading(false);
+        console.log(data);
+
         return; // No continúes si hay un error
       }
 

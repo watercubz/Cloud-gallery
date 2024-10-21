@@ -7,7 +7,7 @@ export default function ProductsComponents() {
         className="flex items-center p-2 text-gray-900 rounded-lg group"
       >
         <svg
-          className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75"
+          className="flex-shrink-0 w-4 h-4 text-gray-500 transition duration-75"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"

@@ -1,24 +1,88 @@
-import Profile from '../pages/Profile';
+import { useEffect, useState } from 'react';
+import supabase from '../../../utils/supabase';
+import { useNavigate } from 'react-router-dom';
 export default function ProfileComponent() {
+  const [image, setImage] = useState('');
+  const [name, setName] = useState('');
+  const [nickName, setNickname] = useState('');
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const ImageProfile = async () => {
+      const { data, error } = await supabase.auth.getSession();
+      if (error) {
+        console.log('error', error);
+      }
+      setImage(data.session.user.user_metadata.avatar_url);
+      setName(data.session.user.user_metadata.full_name);
+      setNickname(data.session.user.user_metadata.preferred_username);
+    };
+    ImageProfile();
+  }, []);
+
+  const handleHome = () => {
+    navigate('/app');
+  };
   return (
-    <li>
-      <a
-        href="#"
-        className="flex items-center p-2 text-gray-900 rounded-lg group"
-      >
-        <svg
-          className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 20 18"
-        >
-          <path d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z" />
-        </svg>
-        <span className="flex-1 ms-3 whitespace-nowrap">
-          <Profile />
-        </span>
-      </a>
-    </li>
+    <>
+      {image ? (
+        <div className="grid place-items-center min-h-screen bg-gray-900">
+          <button
+            className="absolute top-4 left-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
+            onClick={handleHome}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <div className="w-full max-w-sm bg-gray-800 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
+            <div className="flex flex-col items-center justify-center pb-10">
+              <img
+                className="w-24 h-24 mb-3 mt-2 rounded-full shadow-lg text-white"
+                src={image}
+                alt="Bonnie image"
+              />
+              <h5 className="mb-1 text-xl font-medium text-white">
+                {nickName}
+              </h5>
+              <span className="text-sm text-white">{name}</span>
+              <div className="flex mt-4 md:mt-6">
+                <a
+                  href="https://github.com/watercubz"
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  agg on github
+                </a>
+                <a
+                  href="https://twitter.com/watercubz"
+                  referrerPolicy="no-referrer"
+                  target="_blank"
+                  className="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                >
+                  message
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <p>Cargando imagen de perfil...</p>
+      )}
+    </>
   );
 }
