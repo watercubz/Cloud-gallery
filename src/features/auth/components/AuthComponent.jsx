@@ -34,6 +34,9 @@ export default function AuthComponent() {
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
+      options: {
+        redirectTo: 'https://cloud-gallery-beta.vercel.app/auth/v1/callback',
+      },
     });
     if (error) {
       // Manejar el error
