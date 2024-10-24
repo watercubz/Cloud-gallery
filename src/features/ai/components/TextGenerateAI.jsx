@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import Loading from '../../ui/Loading';
 import toast from 'react-hot-toast';
 
-export default function TextGenerateIAI() {
+export default function TextGenerateIA() {
   const [search, setSearch] = useState('');
   const [iaResponse, setIaResponse] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,12 +15,16 @@ export default function TextGenerateIAI() {
   async function AI() {
     setLoading(true);
     setIaResponse('');
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-    const prompt = `Eres una apasionante escritora de cuentos de todo tipo. Cuando alguien te pase el nombre '${search}', genera un cuento de terror aleatorio que incluya ese nombre. Asegúrate de crear una atmósfera inquietante y una trama intrigante. recuerda si el ${search} contiene palabras onfensibas descriminacion, acoso, racismo, reponde con que no puedes generar nada que contenga ese tipo de contenido`;
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-1.5-flash-latest',
+    });
+    const prompt = `
+    Eres un escritor talentoso que puede generar cuentos de cualquier tipo. Cuando el usuario te dé una descripción o un tema ${search}, utiliza esa información para crear una historia creativa y cautivadora. Asegúrate de que tus relatos sean originales y entretenidos, adaptándote a los deseos y preferencias del usuario.
+    `;
 
     try {
       const result = await model.generateContent(prompt);
-      const response = await result.response;
+      const response = result.response;
       const text = response.text();
 
       setIaResponse(text);
@@ -42,7 +45,7 @@ export default function TextGenerateIAI() {
 
   const handleClick = () => {
     if (search.trim() === '') {
-      toast.error('describa un cuento de hallowen');
+      toast.error('Please describe a story or history');
     } else {
       AI();
       setSearch('');
@@ -61,14 +64,14 @@ export default function TextGenerateIAI() {
           placeholder="Describe tu historia...."
           value={search}
           onChange={handleSearch}
-          maxLength={70}
+          maxLength={200}
           autoFocus={true}
         />
         <button
-          className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-lg  border-gray-200"
+          className="py-2.5 px-4 me-2 text-sm font-medium text-white focus:outline-none bg-gray-800 rounded-lg  border-gray-200"
           onClick={handleClick}
         >
-          Generar
+          Generate
         </button>
       </div>
 
@@ -79,7 +82,7 @@ export default function TextGenerateIAI() {
       ) : (
         iaResponse && (
           <div className="mt-6 max-w-lg w-full mx-auto p-4 bg-gray-800 rounded-lg border border-gray-700">
-            <p className="text-white text-lg font-medium break-words">
+            <p className="text-gray-200 text-lg font-medium break-words">
               {iaResponse}
             </p>
           </div>

@@ -30,8 +30,8 @@ export default function PageAI() {
             />
           </svg>
         </button>
-        <h1 className="text-center text-3xl font-bold mt-8 text-white">
-          GENERA CUENTOS A TRAVÉS DE AI
+        <h1 className="text-center text-3xl font-medium mt-8 text-gray-300">
+          GENERA HISTORIAS O CUENTOS
         </h1>
 
         <div className="w-full max-w-lg mb-[300px]">

@@ -17,16 +17,18 @@ export default function ImageDetect() {
   async function RunImage() {
     setLoading(true);
     setResponse('');
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-1.5-flash-latest',
+    });
     const result = await model.generateContent([
-      '¿Qué hay en esta foto?, solo puedes responder a fotos con tematica de hallowen, terror, horror, de lo contrario dile que la foto no cumple con la tematica',
+      '¿Qué hay en esta foto?, eres una experta en detectar imaganes que te pasen los usuarios, puedes detectar calquier tipo de imagen y decirle al usario que hay en dichas imagen, caul quier tipo de foto inaporpiedad, sexual, desnudo, henatai, pornografia, oh que detectes como de niños, bebe ect, por favor de darle un aviso al usario que ese tipo de contenido es ilegal y puede ir a la carcel, si la imagen no tiene nada de lo anterior mensionado no tienes que notificar al usario',
       imageInineData,
     ]);
 
-    //TODO: proteccion para preguntas fuera de lugar y implementar la gneracion de imagenes con otro modelo
+    //TODO: protection for out-of-place questions and implement image generation with another model
 
     const response = await result.response;
-    const text = response.text();
+    const text = await response.text();
     setResponse(text);
     setLoading(false);
   }

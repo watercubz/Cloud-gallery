@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useNavigate } from 'react-router-dom';
 import ErrorPage from '../../ui/Loading';
 
