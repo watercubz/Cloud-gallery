@@ -22,9 +22,9 @@ export default function App() {
     {
       path: '/app',
       element: (
-        <ProtectedRoute>
-          <Sidebar />
-        </ProtectedRoute>
+        // <ProtectedRoute>
+        <Sidebar />
+        // </ProtectedRoute>
       ),
     },
     {
@@ -38,9 +38,9 @@ export default function App() {
     {
       path: '/ai',
       element: (
-        <ProtectedRoute>
-          <PageAI />
-        </ProtectedRoute>
+        // <ProtectedRoute>
+        <PageAI />
+        // </ProtectedRoute>
       ),
     },
     {
