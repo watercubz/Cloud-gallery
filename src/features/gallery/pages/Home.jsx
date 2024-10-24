@@ -11,10 +11,12 @@ export default function Home() {
     const timer = setTimeout(() => {
       setLoading(false);
       toast.success('Objeto 3D cargado 💚');
-    }, 300);
+    }, 200);
 
     return () => clearTimeout(timer);
   }, []);
+
+  if (loading) <p className="bg-red-700">Cargando....</p>;
 
   return (
     <>

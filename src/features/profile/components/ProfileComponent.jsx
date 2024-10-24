@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import supabase from '../../../utils/supabase';
 import { useNavigate } from 'react-router-dom';
+
 export default function ProfileComponent() {
   const [image, setImage] = useState('');
   const [name, setName] = useState('');
   const [nickName, setNickname] = useState('');
+  const [date, setDate] = useState('');
 
   const navigate = useNavigate();
 
@@ -14,9 +16,11 @@ export default function ProfileComponent() {
       if (error) {
         console.log('error', error);
       }
+      console.log(data);
+
       setImage(data.session.user.user_metadata.avatar_url);
       setName(data.session.user.user_metadata.full_name);
-      setNickname(data.session.user.user_metadata.preferred_username);
+      setNickname(data.session.user.user_metadata.user_name);
     };
     ImageProfile();
   }, []);
@@ -24,6 +28,19 @@ export default function ProfileComponent() {
   const handleHome = () => {
     navigate('/app');
   };
+
+  useEffect(() => {
+    const handleDate = () => {
+      const date = new Date();
+      const formattedDate = date.toLocaleTimeString().split('T')[0]; // Formato YYYY-MM-DD
+      setDate(formattedDate);
+    };
+    handleDate();
+
+    const intervalId = setInterval(handleDate, 0);
+
+    return () => clearInterval(intervalId);
+  }, []);
   return (
     <>
       {image ? (
@@ -59,24 +76,7 @@ export default function ProfileComponent() {
                 {nickName}
               </h5>
               <span className="text-sm text-white">{name}</span>
-              <div className="flex mt-4 md:mt-6">
-                <a
-                  href="https://github.com/watercubz"
-                  target="_blank"
-                  referrerPolicy="no-referrer"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  agg on github
-                </a>
-                <a
-                  href="https://twitter.com/watercubz"
-                  referrerPolicy="no-referrer"
-                  target="_blank"
-                  className="py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                >
-                  message
-                </a>
-              </div>
+              <button className="flex mt-4 md:mt-6 text-white">{date}</button>
             </div>
           </div>
         </div>

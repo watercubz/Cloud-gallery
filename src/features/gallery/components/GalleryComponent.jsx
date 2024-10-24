@@ -1,8 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from 'react';
-import toast from 'react-hot-toast';
 import Loading from '../../ui/Loading';
-import { useNavigate } from 'react-router-dom';
+import useFecthCloud from '../../../hooks/useFecthcloud';
 
 const GalleryImage = ({ imageUrl }) => {
   return (
@@ -16,65 +14,9 @@ const GalleryImage = ({ imageUrl }) => {
   );
 };
 
-const secretCloud = import.meta.env.VITE_SECRET_API_API_KEY;
-const cloudName = import.meta.env.VITE_PUBLIC_CLOUD_NAME;
-
 export default function GalleryComponent() {
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [agreed, setAgreeget] = useState(() => {
-    return localStorage.getItem('agreed') === 'true' || false;
-  });
-
-  const navigate = useNavigate();
-
-  const cloudinaryUrl = `/api/v1_1/${cloudName}/resources/image/upload?prefix=cloud-folder&max_results=1000`;
-
-  // TODO: intentar implementar la api de cloundary para produccion por el error de cors
-
-  const fetchImages = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(` ${cloudinaryUrl}`, {
-        method: 'GET',
-        headers: {
-          Authorization: `Basic ${btoa(`${secretCloud}`)}`,
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Error fetching images');
-      }
-
-      const data = await response.json();
-      toast.success('imagenes cargadas');
-      setImages(data.resources);
-    } catch (error) {
-      toast.error('Error', error);
-      console.error(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleCancel = () => {
-    navigate('/');
-  };
-
-  useEffect(() => {
-    if (agreed) {
-      fetchImages();
-    }
-  }, [agreed]);
-
-  const handleAgreement = () => {
-    setAgreeget(true);
-    localStorage.setItem('agreed', 'true');
-  };
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 600);
-  }, []);
+  const { images, loading, agreed, handleAgreement, handleCancel } =
+    useFecthCloud();
 
   return (
     <>
@@ -85,7 +27,7 @@ export default function GalleryComponent() {
             <div className="bg-gray-800 rounded-lg md:max-w-md md:mx-auto p-4 fixed inset-x-0 bottom-0 z-50 mb-4 mx-4 md:relative shadow-lg">
               <div className="md:flex items-center">
                 <div className="rounded-full border border-gray-300 flex items-center justify-center w-16 h-16 flex-shrink-0 mx-auto">
-                  <i className="bx bx-error text-3xl">&#9888;</i>
+                  <i className="bx bx-error text-3xl ">&#9888;</i>
                 </div>
                 <div className="mt-4 md:mt-0 md:ml-6 text-center md:text-left">
                   <p className="font-bold text-white">AVISO</p>
@@ -123,7 +65,7 @@ export default function GalleryComponent() {
               <GalleryImage key={image.public_id} imageUrl={image.secure_url} />
             ))
           ) : (
-            <p>Error en la API de producción</p>
+            <p>Error en la API de producción ✅</p>
           )}
         </div>
       )}
