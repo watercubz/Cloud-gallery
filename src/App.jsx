@@ -1,13 +1,20 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './features/auth/components/ProtecteRoutes';
-import AuthComponent from './features/auth/components/AuthComponent';
+//import AuthComponent from './features/auth/components/AuthComponent';
 import Home from './features/gallery/pages/Home';
 import Sidebar from './features/Layouts/SideBar';
 import Pricing from './features/pricing/pages/Pricing';
 import PageImage from './features/ai/components/PageImage';
 import PageAI from './features/ai/components/PageText';
 import ProfileComponent from './features/profile/components/ProfileComponent';
+
+import React, { Suspense } from 'react';
+import Loading from './features/ui/Loading';
+
+const AuthComponent = React.lazy(
+  () => import('./features/auth/components/AuthComponent'),
+);
 
 export default function App() {
   const router = createBrowserRouter([
@@ -17,7 +24,11 @@ export default function App() {
     },
     {
       path: '/auth',
-      element: <AuthComponent />,
+      element: (
+        <Suspense fallback={console.log('lazyyyy')}>
+          <AuthComponent />
+        </Suspense>
+      ),
     },
     {
       path: '/app',
