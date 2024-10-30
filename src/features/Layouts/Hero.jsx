@@ -50,7 +50,7 @@ export default function Hero() {
                 <span className="relative inline-block overflow-hidden rounded-full p-[1px]">
                   <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a9a9a9_0%,#0c0c0c_50%,#a9a9a9_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#171717_0%,#737373_50%,#171717_100%)]" />
                   <div className="inline-flex h-full w-full cursor-pointer justify-center rounded-full bg-gray-800 px-3 py-1 text-xs font-medium leading-5 text-white backdrop-blur-xl dark:bg-black dark:text-slate-200">
-                    New IA ⚡️
+                    New Chat ⚡️
                     <span className="inline-flex items-center pl-2 text-white">
                       Read more{' '}
                       <ArrowRight className="pl-1.5 text-white" size={16} />
@@ -66,9 +66,9 @@ export default function Hero() {
               </span>
             </h2>
             <p className="mt-6 text-center text-lg leading-6 text-gray-600 dark:text-gray-200">
-              Share your photos with the world and generate stories with IA, all
-              that <span className="cursor-wait opacity-70">IA</span>{' '}
-              integration.
+              Share your photos with the world and generate stories with AI,
+              <span className="cursor-wait opacity-90"> chat</span> integration
+              with everyone
             </p>
             <div className="mt-10 flex gap-4">
               <a
