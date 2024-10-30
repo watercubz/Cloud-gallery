@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './features/auth/components/ProtecteRoutes';
-//import AuthComponent from './features/auth/components/AuthComponent';
 import Home from './features/gallery/pages/Home';
 import Sidebar from './features/Layouts/SideBar';
 import Pricing from './features/pricing/pages/Pricing';
@@ -10,7 +9,7 @@ import PageAI from './features/ai/components/PageText';
 import ProfileComponent from './features/profile/components/ProfileComponent';
 
 import React, { Suspense } from 'react';
-import Loading from './features/ui/Loading';
+import ChatComponent from './features/chats/componentes/chatComponent';
 
 const AuthComponent = React.lazy(
   () => import('./features/auth/components/AuthComponent'),
@@ -43,6 +42,14 @@ export default function App() {
       element: (
         <ProtectedRoute>
           <ProfileComponent />
+        </ProtectedRoute>
+      ),
+    },
+    {
+      path: '/chat',
+      element: (
+        <ProtectedRoute>
+          <ChatComponent />
         </ProtectedRoute>
       ),
     },
