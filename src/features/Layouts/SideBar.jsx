@@ -7,6 +7,7 @@ import Profile from '../profile/pages/Profile';
 import ImboxComponent from '../auth/components/ImboxComponent';
 import ProductsComponent from '../Layouts/ProductsComponent';
 import PricingButton from '../pricing/components/PricingButton';
+import PageChat from '../chats/pages/page';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -103,6 +104,7 @@ export default function Sidebar() {
                       <ProductsComponent />
                       <ImboxComponent />
                       <Profile />
+                      <PageChat />
                       <PricingButton />
                       <DocsComponet />
                       <LogoutComponent />
