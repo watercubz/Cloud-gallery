@@ -14,10 +14,9 @@ export default function useFecthCloud() {
 
   const navigate = useNavigate();
 
-  // TODO: implementar supabse para el la subida y recuperacion de las imagenes, aun no se puede usar la api de cloudinary en prodiccion por el error de cors
-
+  // TODO: Implement supabase for uploading and retrieving images, the cloudinary api cannot be used in production yet due to the cors error
   /*
-   This change of service is due to the error that occurs when you upload the Cloudinary API to production without the Vite.js proxy,
+   this change of service is due to the error that occurs when you upload the cloudinary api to production without the vite.js proxy,
    therefore there is a need to change cloud service, the best option so far is Supabase
     */
 
@@ -27,7 +26,7 @@ export default function useFecthCloud() {
      The only way I can get it to work locally is with the common Vite proxy  ☠️
    */
 
-  // TODO: intentar implementar la api de cloundary para produccion por el error de cors ❌
+  // TODO: Trying to deploy the Cloudary API for production due to the cors error ❌
 
   const fetchImages = async () => {
     setLoading(true);
