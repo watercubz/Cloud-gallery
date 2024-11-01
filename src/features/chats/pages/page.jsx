@@ -11,7 +11,7 @@ export default function PageChat() {
       <a href="#" className="flex items-center p-2 text-white rounded-lg group">
         <svg
           fill="none"
-          className="w-4 h-6"
+          className="w-6  h-6"
           viewBox="0 0 24 24"
           width="24"
           xmlns="http://www.w3.org/2000/svg"
