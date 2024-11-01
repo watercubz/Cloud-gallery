@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Github } from 'lucide-react';
 import supabase from '../../../utils/supabase';
 import CloudLogo from '../../../assets/img/Logo-cloudv2.png';
 import Loading from '../../ui/Loading';
@@ -35,7 +34,7 @@ export default function AuthComponent() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
       options: {
-        redirectTo: 'https://cloud-gallery-beta.vercel.app/auth/v1/callback',
+        redirectTo: 'http://localhost:5173/auth/v1/callback',
       },
     });
     if (error) {
@@ -89,10 +88,6 @@ export default function AuthComponent() {
                   className="bg-gray-800 border border-gray-300 text-white rounded-lg w-full p-2.5 hover:text-gray-500 flex items-center justify-center space-x-2"
                   onClick={handleLogin}
                 >
-                  <Github
-                    className="h-6 w-6 text-neutral-200 transition-colors hover:text-neutral-600 dark:text-neutral-200 dark:hover:text-neutral-400"
-                    strokeWidth={1.5}
-                  />
                   <span>Github</span>
                 </button>
               </div>
