@@ -2,18 +2,29 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './features/auth/components/ProtecteRoutes';
 import Home from './features/gallery/pages/Home';
-import Sidebar from './features/Layouts/SideBar';
-import Pricing from './features/pricing/pages/Pricing';
-import PageImage from './features/ai/components/PageImage';
-import PageAI from './features/ai/components/PageText';
-import ProfileComponent from './features/profile/components/ProfileComponent';
 
 import React, { Suspense } from 'react';
-import ChatComponent from './features/chats/componentes/chatComponent';
+import Loading from './features/ui/Loading';
 
 const AuthComponent = React.lazy(
   () => import('./features/auth/components/AuthComponent'),
 );
+const ProfileComponent = React.lazy(
+  () => import('./features/profile/components/ProfileComponent'),
+);
+
+const Sidebar = React.lazy(() => import('./features/Layouts/SideBar'));
+
+const ChatComponent = React.lazy(
+  () => import('./features/chats/componentes/chatComponent'),
+);
+const PageAI = React.lazy(() => import('./features/ai/components/PageText'));
+
+const PageImage = React.lazy(
+  () => import('./features/ai/components/PageImage'),
+);
+
+const Pricing = React.lazy(() => import('./features/pricing/pages/Pricing'));
 
 export default function App() {
   const router = createBrowserRouter([
@@ -24,7 +35,7 @@ export default function App() {
     {
       path: '/auth',
       element: (
-        <Suspense fallback={console.log('lazyyyy')}>
+        <Suspense fallback={<Loading />}>
           <AuthComponent />
         </Suspense>
       ),
@@ -32,49 +43,61 @@ export default function App() {
     {
       path: '/app',
       element: (
-        <ProtectedRoute>
-          <Sidebar />
-        </ProtectedRoute>
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <Sidebar />
+          </ProtectedRoute>
+        </Suspense>
       ),
     },
     {
       path: '/profile',
       element: (
-        <ProtectedRoute>
-          <ProfileComponent />
-        </ProtectedRoute>
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <ProfileComponent />
+          </ProtectedRoute>
+        </Suspense>
       ),
     },
     {
       path: '/chat',
       element: (
-        <ProtectedRoute>
-          <ChatComponent />
-        </ProtectedRoute>
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <ChatComponent />
+          </ProtectedRoute>
+        </Suspense>
       ),
     },
     {
       path: '/ai',
       element: (
-        <ProtectedRoute>
-          <PageAI />
-        </ProtectedRoute>
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <PageAI />
+          </ProtectedRoute>
+        </Suspense>
       ),
     },
     {
       path: '/image',
       element: (
-        <ProtectedRoute>
-          <PageImage />
-        </ProtectedRoute>
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <PageImage />
+          </ProtectedRoute>
+        </Suspense>
       ),
     },
     {
       path: '/pricing',
       element: (
-        <ProtectedRoute>
-          <Pricing />
-        </ProtectedRoute>
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <Pricing />
+          </ProtectedRoute>
+        </Suspense>
       ),
     },
   ]);
