@@ -90,15 +90,15 @@ export default function ChatComponent() {
     <>
       <div className="h-screen flex flex-col lg:flex-row">
         {/* Sidebar */}
-        <div className="hidden lg:block w-1/3 bg-gray-200 p-4 border-r border-gray-300">
-          <h2 className="text-xl font-semibold mb-4">Chats</h2>
+        <div className="hidden lg:block w-1/3 bg-gray-900 p-4 border-r border-gray-300">
+          <h2 className="text-xl font-semibold mb-4 text-white">Chats</h2>
           {/* Aquí podrías listar los contactos o chats disponibles */}
         </div>
 
         {/* Chat window */}
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col bg-gray-900">
           {/* Header */}
-          <div className="p-4 bg-blue-500 text-white flex items-center gap-3 border-b border-gray-300">
+          <div className="p-4 bg-gray-9 00 text-white flex items-center gap-3 border-b border-gray-300">
             <h2 className="text-lg font-semibold">Public chat</h2>
             <button
               className=" py-2 px-4 text-red-700 transition-colors duration-150  border-zinc-500 rounded-lg"
@@ -123,7 +123,7 @@ export default function ChatComponent() {
           </div>
 
           {/* Chat messages */}
-          <div className="flex-1 overflow-y-auto p-4 bg-gray-100">
+          <div className="flex-1 overflow-y-auto p-4 bg-gray-900">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -153,30 +153,30 @@ export default function ChatComponent() {
           </div>
 
           {/* Input section */}
-          <div className="p-4 border-t border-gray-300 bg-white flex gap-2 items-center">
+          <div className="p-4 border-t  bg-gray-900 flex gap-2 items-center">
             <input
               type="text"
               placeholder="username..."
+              className="w-1/4 p-2 rounded-lg border bg-gray-900 focus:outline-none hidden lg:block"
               value={user}
               onChange={(e) => setUser(e.target.value)}
               onFocus={true}
-              className="w-1/4 p-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-400 hidden lg:block"
             />
             <input
               type="text"
               placeholder="typing...."
               value={message}
               onChange={handleUser}
+              className="flex-1 p-2 rounded-lg border bg-gray-900 focus:outline-none "
               onKeyUp={(e) => {
                 if (e.key === 'Enter') {
                   onSend();
                 }
               }}
-              className="flex-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:border-blue-400"
             />
             <button
               onClick={onSend}
-              className="p-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              className="py-2 px-4 text-blue-700 transition-colors duration-150  border-zinc-900 rounded-lg"
             >
               Send
             </button>
