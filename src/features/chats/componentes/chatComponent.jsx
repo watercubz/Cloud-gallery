@@ -8,7 +8,6 @@ export default function ChatComponent() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [user, setUser] = useState(null);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -92,7 +91,18 @@ export default function ChatComponent() {
         {/* Sidebar */}
         <div className="hidden lg:block w-1/3 bg-gray-900 p-4 border-r border-gray-300">
           <h2 className="text-xl font-semibold mb-4 text-white">Chats</h2>
-          {/* Aquí podrías listar los contactos o chats disponibles */}
+          {messages?.map((userName, i) => (
+            <div key={i} className="flex items-center space-x-3 m-5">
+              <img
+                src={`https://api.dicebear.com/5.x/personas/svg?seed=${userName.user}`}
+                alt={`profile`}
+                className="w-8 h-8 rounded-full"
+              />
+              <h2 className="text-white font-medium cursor-pointer hover:text-gray-400">
+                {userName.user}
+              </h2>
+            </div>
+          ))}
         </div>
 
         {/* Chat window */}
@@ -157,7 +167,7 @@ export default function ChatComponent() {
             <input
               type="text"
               placeholder="username..."
-              className="w-1/4 p-2 rounded-lg border bg-gray-900 focus:outline-none hidden lg:block"
+              className="w-1/4 p-2 rounded-lg border bg-gray-900  text-white focus:outline-none"
               value={user}
               onChange={(e) => setUser(e.target.value)}
               onFocus={true}
@@ -167,7 +177,7 @@ export default function ChatComponent() {
               placeholder="typing...."
               value={message}
               onChange={handleUser}
-              className="flex-1 p-2 rounded-lg border bg-gray-900 focus:outline-none "
+              className="flex-1 p-2 rounded-lg border bg-gray-900 text-white focus:outline-none"
               onKeyUp={(e) => {
                 if (e.key === 'Enter') {
                   onSend();
