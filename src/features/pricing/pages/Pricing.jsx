@@ -43,15 +43,15 @@ const Pricing = () => {
           <ul role="list" className="space-y-5 my-7">
             <BenefitItem text="1 team members" />
             <BenefitItem text="200MB Cloud storage" />
+            <BenefitItem text="Upload unlimited photos" isAvailable={false} />
             <BenefitItem text="Integration AI" isAvailable={false} />
-            <BenefitItem text="Complete documentation" isAvailable={true} />
+            <BenefitItem text="Complete documentation" />
           </ul>
           <ChoosePlanButton choseName="Free" />
         </div>
 
-        {/* Plan Básico */}
         <div className="w-full max-w-xs p-4 bg-gray-900 border border-gray-200 rounded-lg shadow sm:p-8 m-4">
-          <h5 className="mb-4 text-xl font-medium text-white">Basic Plan</h5>
+          <h5 className="mb-4 text-xl font-medium text-white">Premium</h5>
           <div className="flex items-baseline text-gray-900 dark:text-white">
             <span className="text-3xl font-semibold text-white">$</span>
             <span className="text-5xl font-extrabold  text-white tracking-tight">
@@ -60,29 +60,11 @@ const Pricing = () => {
             <span className="ms-1 text-xl font-normal text-white">/month</span>
           </div>
           <ul role="list" className="space-y-5 my-7">
-            <BenefitItem text="2 team member" />
-            <BenefitItem text="5GB Cloud storage" />
+            <BenefitItem text="5 team member" />
+            <BenefitItem text="25GB Cloud storage" />
             <BenefitItem text="Image generation with AI" />
-            <BenefitItem text="Basic support" />
-          </ul>
-          <ChoosePlanButton choseName="choosee plan" />
-        </div>
-
-        {/* Plan Premium */}
-        <div className="w-full max-w-xs p-4 bg-gray-900 border border-gray-200 rounded-lg shadow sm:p-8 m-4">
-          <h5 className="mb-4 text-xl font-medium text-white">Premium Plan</h5>
-          <div className="flex items-baseline text-gray-900 dark:text-white">
-            <span className="text-3xl font-semibold">$</span>
-            <span className="text-5xl font-extrabold text-white tracking-tight">
-              99
-            </span>
-            <span className="ms-1 text-xl font-normal text-white">/month</span>
-          </div>
-          <ul role="list" className="space-y-5 my-7">
-            <BenefitItem text="10 team members" />
-            <BenefitItem text="100GB Cloud storage" />
-            <BenefitItem text="Priority support" />
-            <BenefitItem text="Unlimited AI Image Generation" />
+            <BenefitItem text="support 24/hr" />
+            <BenefitItem text="Upload unlimited photos" />
           </ul>
           <ChoosePlanButton choseName="choosee plan" />
         </div>
