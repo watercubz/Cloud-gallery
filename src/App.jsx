@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './features/auth/components/ProtecteRoutes';
 import Home from './features/gallery/pages/Home';
 
@@ -9,22 +8,18 @@ import Loading from './features/ui/Loading';
 const AuthComponent = React.lazy(
   () => import('./features/auth/components/AuthComponent'),
 );
-const ProfileComponent = React.lazy(
-  () => import('./features/profile/components/ProfileComponent'),
-);
-
 const Sidebar = React.lazy(() => import('./features/Layouts/SideBar'));
-
 const ChatComponent = React.lazy(
   () => import('./features/chats/componentes/chatComponent'),
 );
 const PageAI = React.lazy(() => import('./features/ai/components/PageText'));
-
 const PageImage = React.lazy(
   () => import('./features/ai/components/PageImage'),
 );
-
 const Pricing = React.lazy(() => import('./features/pricing/pages/Pricing'));
+const Toaster = React.lazy(() =>
+  import('react-hot-toast').then((module) => ({ default: module.Toaster })),
+);
 
 export default function App() {
   const router = createBrowserRouter([
@@ -46,16 +41,6 @@ export default function App() {
         <Suspense fallback={<Loading />}>
           <ProtectedRoute>
             <Sidebar />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/profile',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <ProfileComponent />
           </ProtectedRoute>
         </Suspense>
       ),
@@ -104,7 +89,10 @@ export default function App() {
 
   return (
     <>
-      <Toaster />
+      <Suspense fallback={<Loading />}>
+        <Toaster />
+      </Suspense>
+
       <RouterProvider router={router} />
     </>
   );
