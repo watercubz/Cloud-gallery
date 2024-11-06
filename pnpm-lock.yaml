@@ -19,6 +19,9 @@ importers:
       '@octokit/rest':
         specifier: ^21.0.2
         version: 21.0.2
+      '@react-symbols/icons':
+        specifier: ^1.2.7
+        version: 1.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@splinetool/react-spline':
         specifier: 2.0.0
         version: 2.0.0(@splinetool/runtime@1.9.30)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1303,6 +1306,15 @@ packages:
       {
         integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==,
       }
+
+  '@react-symbols/icons@1.2.7':
+    resolution:
+      {
+        integrity: sha512-jP5KI/GFn032rmhwCrm9eRrBTTRES25A7SPQCOgljq/xMc3teQhi0CCjUY02afb0T2uJ1mK/d/64CtXP7SV95A==,
+      }
+    peerDependencies:
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
 
   '@remix-run/router@1.19.2':
     resolution:
@@ -6566,6 +6578,11 @@ snapshots:
     optional: true
 
   '@popperjs/core@2.11.8': {}
+
+  '@react-symbols/icons@1.2.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@remix-run/router@1.19.2': {}
 
