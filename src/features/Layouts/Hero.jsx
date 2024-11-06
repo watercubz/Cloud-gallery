@@ -1,5 +1,5 @@
+import { Github } from '@react-symbols/icons';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Twitter, Github } from 'lucide-react';
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -15,26 +15,16 @@ export default function Hero() {
           <div />
           <nav className="flex gap-6">
             <a
-              href="https://twitter.com/watercubz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex"
-            >
-              <Twitter
-                className="h-6 w-6 text-neutral-200 transition-colors hover:text-neutral-600 dark:text-neutral-200 dark:hover:text-neutral-400"
-                strokeWidth={1.5}
-              />
-            </a>
-            <a
               href="https://github.com/watercubz/Cloud-gallery"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex"
+              className="inline-flex items-center text-white hover:text-neutral-400"
             >
               <Github
-                className="h-6 w-6 text-neutral-200 transition-colors hover:text-neutral-600 dark:text-neutral-200 dark:hover:text-neutral-400"
-                strokeWidth={1.5}
+                className="h-6 w-8 text-neutral-200 transition-colors hover:text-neutral-600 dark:text-neutral-200 dark:hover:text-neutral-400"
+                strokeWidth={5}
               />
+              Github
             </a>
           </nav>
         </header>
@@ -53,7 +43,6 @@ export default function Hero() {
                     New Chat ⚡️
                     <span className="inline-flex items-center pl-2 text-white">
                       Read more{' '}
-                      <ArrowRight className="pl-1.5 text-white" size={16} />
                     </span>
                   </div>
                 </span>
@@ -70,18 +59,7 @@ export default function Hero() {
               <span className="cursor-wait opacity-90"> chat</span> integration
               with everyone
             </p>
-            <div className="mt-10 flex gap-4">
-              <a
-                href="https://github.com/ibelick/background-snippets"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center"
-              >
-                <button>
-                  Go to GitHub <ArrowRight className="pl-0.5" size={16} />
-                </button>{' '}
-              </a>
-            </div>
+            <div className="mt-10 flex gap-4"></div>
           </div>
         </div>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">

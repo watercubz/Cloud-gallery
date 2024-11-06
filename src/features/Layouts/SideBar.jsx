@@ -1,22 +1,37 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GalleryComponent from '../gallery/components/GalleryComponent';
 import DocsComponet from '../docs/components/DocsComponet';
-import LogoutComponent from '../auth/pages/LogoutComponent';
-import Profile from '../profile/pages/Profile';
-import ImboxComponent from '../auth/components/ImboxComponent';
+import ImboxComponent from '../auth/pages/ImboxComponent';
 import ProductsComponent from '../Layouts/ProductsComponent';
 import PricingButton from '../pricing/components/PricingButton';
 import PageChat from '../chats/pages/page';
 
+import supabase from '../../utils/supabase/supabase';
+import LogoutComponent from '../profile/components/LogoutComponent';
+
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
+  const [image, setImage] = useState('');
+  const [name, setNickname] = useState('');
 
   const navigate = useNavigate();
 
   const handleHome = () => {
     navigate('/');
   };
+
+  useEffect(() => {
+    const ImageProfile = async () => {
+      const { data, error } = await supabase.auth.getSession();
+      if (error) {
+        console.log('error', error);
+      }
+      setImage(data.session.user.user_metadata.avatar_url);
+      setNickname(data.session.user.user_metadata.user_name);
+    };
+    ImageProfile();
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen font-sans bg-gray-950">
@@ -76,6 +91,22 @@ export default function Sidebar() {
                 <div className="flex items-center justify-between px-4">
                   <h2 className="text-4 font-medium text-amber-700">
                     Cloud Gallery
+                    <div className="flex items-center">
+                      {image ? (
+                        <div className="flex items-center">
+                          <img
+                            src={image}
+                            alt="Profile"
+                            className="h-10 w-10 rounded-full mr-2 mt-3 "
+                          />
+                          <p className="text-lg font-medium text-gray-400 mt-2">
+                            {name}
+                          </p>
+                        </div>
+                      ) : (
+                        <p>Error....</p>
+                      )}
+                    </div>
                   </h2>
                   <button
                     onClick={() => setOpen(false)}
@@ -103,7 +134,6 @@ export default function Sidebar() {
                     <ul className="space-y-2 font-medium">
                       <ProductsComponent />
                       <ImboxComponent />
-                      <Profile />
                       <PageChat />
                       <PricingButton />
                       <DocsComponet />
