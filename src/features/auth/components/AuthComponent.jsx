@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import supabase from '../../../utils/supabase';
+import supabase from '../../../utils/supabase/supabase';
 import CloudLogo from '../../../assets/img/Logo-cloudv2.png';
 import Loading from '../../ui/Loading';
+import { Github } from '@react-symbols/icons';
 
 export default function AuthComponent() {
   const [loading, setLoading] = useState(true);
@@ -33,10 +34,8 @@ export default function AuthComponent() {
   const handleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
-      options: {
-        redirectTo: 'http://localhost:5173/auth/v1/callback',
-      },
     });
+
     if (error) {
       // Manejar el error
       console.error(error);
@@ -88,7 +87,10 @@ export default function AuthComponent() {
                   className="bg-gray-800 border border-gray-300 text-white rounded-lg w-full p-2.5 hover:text-gray-500 flex items-center justify-center space-x-2"
                   onClick={handleLogin}
                 >
-                  <span>Github</span>
+                  <span className="inline-flex items-center">
+                    {' '}
+                    <Github className="w-6 h-6 mr-2 " /> Github
+                  </span>
                 </button>
               </div>
             </article>
