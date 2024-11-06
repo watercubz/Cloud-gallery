@@ -1,5 +1,5 @@
 import toast from 'react-hot-toast';
-import supabase from '../../../utils/supabase.js';
+import supabase from '../../../utils/supabase/supabase';
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export default function ChatComponent() {
       const { data, error } = await supabase
         .from('messages')
         .select('*')
-        .order('id', { ascending: true }); // Asegúrate de tener un campo 'id' para ordenar los mensajes
+        .order('id', { ascending: true });
 
       if (error) {
         console.error('Error fetching messages:', error);
