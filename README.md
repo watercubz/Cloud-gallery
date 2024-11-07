@@ -6,7 +6,8 @@
 
 ## ✨ Features
 
-🐧🦖 
+🐧🦖
+
 - **Text generation**
 - **Image detection**
 - **Image upload**
@@ -16,11 +17,11 @@
 ## ⏳ Future Features
 
 ✅⌛
+
 - Global chat
 - Private cloud storage
 - Private chats
 - AI-powered image editing
-- Unit testing
 - Share images via chat
 
 ---
@@ -28,6 +29,7 @@
 ## ⚙️ Technologies Used
 
 🛠️
+
 - **React.js**
 - **Supabase**
 - **TailwindCSS**
@@ -78,30 +80,37 @@ To use this project, you'll need your Cloudinary credentials. You will need the 
    ```
 
 ## 🚀 Running the Project
+
 To run the project, you can use any of the following package managers: pnpm, npm, or yarn. Here’s how to do it with each:
 
 ## Using pnpm
+
 Make sure you have pnpm installed. If you haven't installed it yet, you can do so with:
 
 ```bash
 npm install -g pnpm
 ```
+
 Install dependencies and run the project:
 
-``` bash
+```bash
 pnpm i && pnpm run dev
 ```
+
 Or, using npm:
 
 ```bash
 npm i && npm run dev
 ```
+
 Or, using yarn:
 
 ```bash
 yarn add && yarn run dev
 ```
+
 ## 🤝 Contributing
+
 We welcome contributions to Cloud Gallery! Here’s how you can help:
 
 Fork the Repository: Create a personal copy of the repository by clicking the "Fork" button on GitHub.
@@ -111,13 +120,15 @@ Clone the Forked Repository: Clone your fork to your local machine:
 ```bash
 git clone https://github.com/your-username/Cloud-gallery.git
 ```
+
 ## 📁 Project Structure
+
 See Project Structure
 
 [project Structure](./ARCHITECTURE.md)
 
 ---
+
 By following these guidelines, you help us improve the project and make it better for everyone!
 
 Feel free to customize the repository link and any other specific details as needed!
-
