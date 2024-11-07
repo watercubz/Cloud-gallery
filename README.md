@@ -8,7 +8,7 @@
 
 ## DEMO
 
-![Cloud-demo](./src/assets/img/cloud-gif-2.gif)
+![Cloud-demo](./src/assets/img/movile-image.png)
 
 ### photos
 
