@@ -20,7 +20,6 @@
 - Private cloud storage
 - Private chats
 - AI-powered image editing
-- Unit testing
 - Share images via chat
 
 ---
