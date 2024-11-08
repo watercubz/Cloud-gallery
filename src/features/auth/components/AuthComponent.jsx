@@ -35,7 +35,6 @@ export default function AuthComponent() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'github',
     });
-
     if (error) {
       // Manejar el error
       console.error(error);
@@ -49,7 +48,7 @@ export default function AuthComponent() {
   };
 
   return (
-    <section className="bg-gray-900 dark:bg-gray-900 min-h-screen flex items-center justify-center">
+    <section className="bg-gray-950 dark:bg-gray-900 min-h-screen flex items-center justify-center">
       <button
         className="absolute top-4 left-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
         onClick={handleHome}
@@ -79,7 +78,7 @@ export default function AuthComponent() {
           <img className="w-20 h-20 mr-2" src={CloudLogo} alt="logo" />
           Cloud Gallery
         </a>
-        <section className="w-full bg-gray-800 rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+        <section className="w-full bg-gray-950 rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <article className="space-y-4 md:space-y-6">
               <div>
