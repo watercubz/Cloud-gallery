@@ -24,11 +24,11 @@ const ConfirmationDialog = ({ onConfirm, onCancel }) => (
             <i className="bx bx-error text-3xl">&#9888;</i>
           </div>
           <div className="mt-4 md:mt-0 md:ml-6 text-center md:text-left">
-            <p className="font-bold text-white">AVISO</p>
+            <p className="font-bold text-white">warning</p>
             <p className="text-sm text-white mt-1">
-              Al subir tus imágenes, aceptas que todos puedan verlas e incluso
-              modificarlas. Cloud Gallery no se hace responsable del uso que se
-              les dé a dichas imágenes. Al hacer clic, aceptas esta política.
+              By uploading your images, you agree that anyone can view and even
+              edit them. Cloud Gallery is not responsible for the use of these
+              images. By clicking, you agree to this policy.
             </p>
           </div>
         </div>
