@@ -91,18 +91,20 @@ export default function ChatComponent() {
         {/* Sidebar */}
         <div className="hidden lg:block w-1/3 bg-gray-900 p-4 border-r border-gray-300">
           <h2 className="text-xl font-semibold mb-4 text-white">Chats</h2>
-          {messages?.map((userName, i) => (
-            <div key={i} className="flex items-center space-x-3 m-5">
-              <img
-                src={`https://api.dicebear.com/5.x/personas/svg?seed=${userName.user}`}
-                alt={`profile`}
-                className="w-8 h-8 rounded-full"
-              />
-              <h2 className="text-white font-medium cursor-pointer hover:text-gray-400">
-                {userName.user}
-              </h2>
-            </div>
-          ))}
+          {message.length >= 2
+            ? 'pepe'
+            : messages?.slice(0, 5).map((userName, i) => (
+                <div key={i} className="flex items-center space-x-3 m-5">
+                  <img
+                    src={`https://api.dicebear.com/5.x/personas/svg?seed=${userName.user}`}
+                    alt={`profile`}
+                    className="w-8 h-8 rounded-full"
+                  />
+                  <h2 className="text-white font-medium cursor-pointer hover:text-gray-400">
+                    {userName.user}
+                  </h2>
+                </div>
+              ))}
         </div>
 
         {/* Chat window */}
