@@ -1,60 +1,20 @@
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import supabase from '../../../utils/supabase/supabase';
 import CloudLogo from '../../../assets/img/Logo-cloudv2.png';
-import Loading from '../../ui/Loading';
 import { Github } from '@react-symbols/icons';
+import { FaGoogle } from 'react-icons/fa';
+import useAuthSession from '../../../hooks/useAuthSession';
 
 export default function AuthComponent() {
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const checkSession = async () => {
-      const { data, error } = await supabase.auth.getSession();
-      if (error) {
-        console.error('Error fetching session:', error);
-        setLoading(false);
-        console.log(data);
-
-        return; // No continúes si hay un error
-      }
-
-      if (data.session) {
-        // Si hay una sesión activa, redirigir al usuario a la página /app
-        navigate('/app');
-      } else {
-        setLoading(false); // Solo cambiar a false si no hay sesión
-      }
-    };
-
-    checkSession();
-  }, [navigate]);
-
-  const handleLogin = async () => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'github',
-    });
-    if (error) {
-      // Manejar el error
-      console.error(error);
-    }
-  };
-
-  if (loading) return <Loading />;
-
-  const handleHome = () => {
-    navigate('/');
-  };
+  const { handleLoginGithub, handleLoginGoogle, handleHome } = useAuthSession();
 
   return (
-    <section className="bg-gray-950 dark:bg-gray-900 min-h-screen flex items-center justify-center">
+    <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center">
       <button
-        className="absolute top-4 left-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
+        className="absolute top-4 left-4 py-2 px-4 text-black dark:text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 z-20"
         onClick={handleHome}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          className=" text-black dark:text-white"
           width="24"
           height="24"
           fill="none"
@@ -78,17 +38,29 @@ export default function AuthComponent() {
           <img className="w-20 h-20 mr-2" src={CloudLogo} alt="logo" />
           Cloud Gallery
         </a>
-        <section className="w-full bg-gray-950 rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
+        <section className="w-full bg-gray-100 rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <article className="space-y-4 md:space-y-6">
               <div>
                 <button
-                  className="bg-gray-800 border border-gray-300 text-white rounded-lg w-full p-2.5 hover:text-gray-500 flex items-center justify-center space-x-2"
-                  onClick={handleLogin}
+                  className="bg-gray-100   dark:bg-gray-900 border  text-black dark:text-white  border-gray-300 rounded-lg w-full p-2.5 hover:text-gray-500 flex items-center justify-center space-x-2 m-4"
+                  onClick={handleLoginGithub}
                 >
                   <span className="inline-flex items-center">
                     {' '}
-                    <Github className="w-6 h-6 mr-2 " /> Github
+                    <Github className="w-6 h-6 mr-2  text-black dark:text-white " />{' '}
+                    Github
+                  </span>
+                </button>
+
+                <button
+                  className="bg-gray-100 dark:bg-gray-900 border border-gray-300 text-black dark:text-white rounded-lg w-full p-2.5 hover:text-gray-500 flex items-center justify-center space-x-2 m-4"
+                  onClick={handleLoginGoogle}
+                >
+                  <span className="inline-flex items-center">
+                    {' '}
+                    <FaGoogle className="w-6 h-6 mr-2 text-black dark:text-white " />{' '}
+                    Google
                   </span>
                 </button>
               </div>

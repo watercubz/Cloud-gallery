@@ -1,7 +1,10 @@
 export default function ImboxComponent() {
   return (
     <li>
-      <a href="#" className="flex items-center p-2 text-white rounded-lg group">
+      <a
+        href="#"
+        className="flex items-center p-2  text-black  dark:text-white rounded-lg group"
+      >
         <svg
           className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75"
           aria-hidden="true"
