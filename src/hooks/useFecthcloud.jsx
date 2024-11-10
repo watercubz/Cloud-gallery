@@ -43,7 +43,7 @@ export default function useFecthCloud() {
       }
 
       const data = await response.json();
-      toast.success('imagenes cargadas');
+      toast.success('loading images');
       setImages(data.resources);
     } catch (error) {
       toast.error('Error', error);
