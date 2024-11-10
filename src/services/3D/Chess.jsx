@@ -1,9 +1,8 @@
-import Spline from '@splinetool/react-spline';
-
+import heroImage from '../../assets/img/image-removebg-preview.png';
 export default function Chess() {
   return (
     <div className="absolute inset-0">
-      <Spline scene="https://prod.spline.design/M1HgjURyO4sZWucZ/scene.splinecode" />
+      <img src={heroImage} alt="image" className="mt-32" />
     </div>
   );
 }
