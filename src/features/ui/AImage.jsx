@@ -9,9 +9,12 @@ export default function AImage() {
   return (
     <div
       role="button"
-      className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all  text-white outline-none"
+      className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all text-black  dark:text-white outline-none"
     >
-      <button onClick={handleImage} className="hover:text-blue-500  text-white">
+      <button
+        onClick={handleImage}
+        className="hover:text-blue-500  text-black  dark:text-white"
+      >
         AI Image
       </button>
     </div>

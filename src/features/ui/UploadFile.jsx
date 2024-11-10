@@ -4,7 +4,7 @@ export default function UploadFile() {
   return (
     <div
       role="button"
-      className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all text-white hover:bg-opacity-80focus:bg-opacity-80 outline-none"
+      className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all text-black dark:text-white hover:bg-opacity-80focus:bg-opacity-80 outline-none"
     >
       <div className="grid place-items-center mr-4">
         <svg
