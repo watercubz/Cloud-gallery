@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import GalleryComponent from '../gallery/components/GalleryComponent';
 import DocsComponet from '../docs/components/DocsComponet';
+
 import ImboxComponent from '../auth/pages/ImboxComponent';
 import ProductsComponent from '../Layouts/ProductsComponent';
+
 import PricingButton from '../pricing/components/PricingButton';
 import PageChat from '../chats/pages/page';
 
@@ -27,26 +30,30 @@ export default function Sidebar() {
       if (error) {
         console.log('error', error);
       }
+      let fullName = data.session.user.user_metadata.full_name;
       setImage(data.session.user.user_metadata.avatar_url);
-      setNickname(data.session.user.user_metadata.user_name);
+      setNickname(data.session.user.user_metadata.user_name || fullName);
     };
     ImageProfile();
   }, []);
 
+  let urlProfile = `https://github.com/${name || null}`;
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-sans bg-gray-950">
+    <div className="flex flex-col items-center justify-center min-h-screen font-sans bg-gray-50 dark:bg-gray-950">
       <h2 className="text-3xl font-bold mb-10 mt-10  text-amber-600">
         Gallery Photos
       </h2>
       <div className="flex justify-end w-full">
         <button
-          className="absolute top-4 rigth-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
+          className="absolute top-4 rigth-4 py-2 px-4  bg-gray-50 dark:bg-gray-950 transition-colors duration-150 border border-zinc-500 rounded-lg z-20"
           onClick={() => setOpen(true)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
+            className=" text-black dark:text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -60,13 +67,14 @@ export default function Sidebar() {
           </svg>
         </button>
         <button
-          className="absolute top-4 left-4 py-2 px-4 text-white transition-colors duration-150 border border-zinc-500 rounded-lg bg-gray-900 hover:bg-gray-800 z-20"
+          className="absolute top-4 left-4 py-2 px-4  bg-gray-50 dark:bg-gray-950 transition-colors duration-150 border border-zinc-500 rounded-lg  z-20"
           onClick={handleHome}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
             height="24"
+            className=" text-black dark:text-white"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -81,15 +89,15 @@ export default function Sidebar() {
         </button>
       </div>
 
-      {/* Sidebar Overlay */}
       {open && (
         <div className="fixed inset-0 z-50 overflow-hidden">
           <div className="absolute inset-0 bg-gray-500 bg-opacity-75"></div>
+
           <section className="absolute inset-y-0 right-0 pl-10 max-w-full flex">
             <div className="w-screen max-w-md transform transition-transform duration-300">
-              <div className="h-full flex flex-col py-6 bg-gray-950 shadow-xl">
+              <div className="h-full flex flex-col py-6 bg-white shadow-xl dark:bg-gray-950 ">
                 <div className="flex items-center justify-between px-4">
-                  <h2 className="text-4 font-medium text-amber-700">
+                  <h2 className="text-4 font-bold text-amber-600">
                     Cloud Gallery
                     <div className="flex items-center">
                       {image ? (
@@ -99,12 +107,16 @@ export default function Sidebar() {
                             alt="Profile"
                             className="h-10 w-10 rounded-full mr-2 mt-3 "
                           />
-                          <p className="text-lg font-medium text-gray-400 mt-2">
+                          <a
+                            className="text-lg font-medium   dark:text-slate-400 text-slate-700 mt-2 hover:text-slate-500 cursor-pointer"
+                            href={urlProfile}
+                            target="_blank"
+                          >
                             {name}
-                          </p>
+                          </a>
                         </div>
                       ) : (
-                        <p>Error....</p>
+                        <p className="text-red-600">Error</p>
                       )}
                     </div>
                   </h2>
@@ -147,8 +159,7 @@ export default function Sidebar() {
         </div>
       )}
 
-      {/* Main content area */}
-      <main className="flex justify-center items-center min-h-screen font-sans py-6 bg-gray-950">
+      <main className="flex justify-center items-center min-h-screen font-sans py-6  bg-gray-50 dark:bg-gray-950">
         <GalleryComponent />
       </main>
     </div>

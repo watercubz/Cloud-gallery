@@ -14,7 +14,7 @@ export function SidebarDropdown() {
     <div className="">
       <button
         onClick={toggleDropdown}
-        className="flex items-center w-full p-3 text-left text-white rounded-lg"
+        className="flex items-center w-full p-3 text-left text-black dark:text-white rounded-lg"
       >
         Products
         <svg
