@@ -35,6 +35,7 @@
 - **TailwindCSS**
 - **Cloudinary**
 - **Google Gemini**
+- **Vitest**
 - **React-router-dom v6**
 
 ---
