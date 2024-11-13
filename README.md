@@ -2,51 +2,21 @@
 
 **Cloud Gallery** is a public cloud-style app where you can upload your most random photos and share them with the world. Powered by AI, it also lets you generate stories and analyze photo content.
 
----
-
-## ✨ Features
-
-- **Text generation**
-- **Image detection**
-- **Image upload**
-- **User authentication**
-- **User profile**
-
-## ⏳ Future Features
-
-- Global chat
-- Private cloud storage
-- Private chats
-- AI-powered image editing
-- Share images via chat
-
----
-
-## ⚙️ Technologies Used
-
-- **React.js**
-- **Supabase**
-- **TailwindCSS**
-- **Cloudinary**
-- **Google Gemini**
-- **Vitest**
-- **React-router-dom v6**
-
----
-
 ## 📖 Is it Open Source?
 
 If **Cloud Gallery** is open source, you can contribute by enhancing the app, adding new features, fixing bugs, and more. Your contributions help improve the project and benefit the community!
 
+## ⚙️ Setup
+
+## Prerequisites
+
+- Ensure **Node.js** and **pnpm**, **npm**, or **yarn** are installed on your machine.
+  - [![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)](https://nodejs.org/)
+  - [![pnpm](https://img.shields.io/badge/pnpm-000000?logo=pnpm&logoColor=white)](https://pnpm.io/)
+  - [![npm](https://img.shields.io/badge/npm-CC3534?logo=npm&logoColor=white)](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+  - [![Yarn](https://img.shields.io/badge/Yarn-2C8EBB?logo=yarn&logoColor=white)](https://classic.yarnpkg.com/en/docs/install/)
+
 ---
-
-## 📸 Screenshot
-
-![Cloud-demo](./src/assets/img/image.png)
-
----
-
-# ⚙️ Setup
 
 To use this project, you'll need your Cloudinary credentials. You will need the following:
 
@@ -107,7 +77,7 @@ Follow these steps to set up and run Cloud Gallery using Docker.
 - Ensure Docker and Docker Compose are installed on your machine.
   - [Docker Installation Guide](https://docs.docker.com/get-docker/)
   - [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
-
+  - [pnpm](https://pnpm.io/)
 ---
 
 ## Step 1: Clone the Repository
@@ -187,7 +157,14 @@ Example:
 **Technical Details**: Windows 10, Chrome 114, Cloud Gallery version 1.2.3.
 ```
 
-## Step 2: Screenshots of the Implemented Changes
+## Step 2: Create a New Branch
+Create a new branch for your changes. It's best to use a descriptive name for your branch that reflects the work you're doing.
+
+```
+git checkout -b feature/your-feature-name
+```
+
+## Step 3: Screenshots of the Implemented Changes
 Include screenshots or gifs that show the interface changes or the effect of your contribution. Images should be clear and, if possible, show both the issue before your changes and the final result.
 
 Example:
@@ -196,7 +173,7 @@ Before: PHOTO
 
 After: PHOTO
 
-## Step 3: Description of the Changes Made
+## Step 4: Description of the Changes Made
 Detailed Explanation: Describe the changes you made in the code and why.
 App Impact: Explain how your contribution improves the application or solves the problem.
 
