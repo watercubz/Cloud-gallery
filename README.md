@@ -135,7 +135,7 @@ Example .env file:
 Add any other necessary variables here
 
 ## Step 3: Build the Docker Images
-Build the Docker images using Docker Compose:
+Build the Docker images using Dockerfile:
 
 ```
 docker build -t atxpaul/react.app
