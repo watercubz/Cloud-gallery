@@ -132,7 +132,7 @@ Example .env file:
    VITE_SUPABASE_URL="your-supabase-url"           # e.g., "https://supa.xdrovbk.co"
    VITE_SUPABASE_ANON_KEY="your-supabase-anon-key"
    ```
-# Add any other necessary variables here
+Add any other necessary variables here
 
 ## Step 3: Build the Docker Images
 Build the Docker images using Docker Compose:
