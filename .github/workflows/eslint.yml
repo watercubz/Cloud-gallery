@@ -20,6 +20,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
       - name: Install ESLint
         run: |
           pnpm add eslint@8.10.0
