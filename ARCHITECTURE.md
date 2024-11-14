@@ -3,92 +3,111 @@
 ### The project follows a modular structure, organized to make it easy for developers to navigate and contribute:
 
 ```
-    └── 📁src
-        ── 📁features
-            ── 📁ai
-                ── 📁components
-                    ── ImageDetect.jsx
-                    ── PageImage.jsx
-                    ── PageText.jsx
-                    ── TextGenerateAI.jsx
-                ── 📁pages
-                    ── Page.jsx
+   ── 📁src
+        └── 📁assets
+            └── 📁img
+                └── cloud-gallery-2.png
+                └── desktop-new-desing.png
+                └── image-removebg-preview.png
+                └── image.png
+                └── Logo-cloudv2.png
+                └── movile-image.png
+            └── react.svg
+        ── 📁core
+            └── 📁ai
+                └── 📁components
+                    └── ImageDetect.jsx
+                    └── PageImage.jsx
+                    └── PageText.jsx
+                    └── TextGenerateAI.jsx
+                └── 📁pages
+                    └── Page.jsx
             ── 📁auth
-                ── 📁components
-                    ── AuthComponent.jsx
-                    ── ProtecteRoutes.jsx
-                ── 📁pages
-                    ── ImboxComponent.jsx
-                    ── LogoutComponent.jsx
+                └── 📁components
+                    └── AuthComponent.jsx
+                    └── ProtecteRoutes.jsx
+                └── 📁pages
+                    └── ImboxComponent.jsx
+                    └── LogoutComponent.jsx
             ── 📁chats
-                ── 📁componentes
-                    ── chatComponent.jsx
-                ── 📁pages
-                    ── page.jsx
-             ── 📁docs
-                ── 📁components
-                    ── DocsButton.jsx
-                    ── DocsComponet.jsx
+                └── 📁componentes
+                    └── chatComponent.jsx
+                    └── chatSidebar.jsx
+                └── 📁pages
+                    └── page.jsx
+            ── 📁docs
+                └── 📁components
+                    └── DocsButton.jsx
+                    └── DocsComponet.jsx
             ── 📁gallery
-                ── 📁components
-                    ── GalleryComponent.jsx
-                ── 📁pages
-                    ── Home.jsx
+                └── 📁components
+                    └── GalleryComponent.jsx
+                └── 📁pages
+                    └── Home.jsx
             ── 📁Layouts
-                ── Hero.jsx
-                ── ProductsComponent.jsx
-                ── SideBar.jsx
-                ── SidebarDropdonw.jsx
+                └── DropdownTheme.jsx
+                └── Hero.jsx
+                └── ProductsComponent.jsx
+                └── SideBar.jsx
+                └── SidebarDropdonw.jsx
+            ── 📁playments
+                └── 📁components
+                    └── page.jsx
+                └── 📁pages
+                    └── page.jsx
             ── 📁pricing
-                ── 📁components
-                    ── PricingButton.jsx
-                    ── PricingComponent.jsx
-                ── 📁pages
-                    ── Pricing.jsx
+                └── 📁components
+                    └── PricingButton.jsx
+                    └── PricingComponent.jsx
+                └── 📁pages
+                    └── Pricing.jsx
             ── 📁profile
-               ── 📁components
-                    ── LogoutButton.jsx
-                    ── LogoutComponent.jsx
-                ── 📁pages
-                    ── Profile.jsx
+                └── 📁components
+                    └── LogoutButton.jsx
+                    └── LogoutComponent.jsx
+                └── 📁pages
+                    └── Profile.jsx
             ── 📁ui
-                ── AImage.jsx
-                ── AiText.jsx
-                ── ErrorPage.jsx
-                ── Loading.jsx
-                ── UploadFile.jsx
+                └── AImage.jsx
+                └── AiText.jsx
+                └── ErrorPage.jsx
+                └── Loading.jsx
+                └── UploadFile.jsx
         ── 📁hooks
-            ── useCloudUpload.jsx
-            ── useFecthcloud.jsx
-       ── 📁services
-            ── 📁3D
-                ── Chess.jsx
-            ── 📁cloudinary
-                ── cloudinaryUploadWidget.jsx
+            └── useAuthSession.jsx
+            └── useCloudUpload.jsx
+            └── useFecthcloud.jsx
+        ── 📁services
+            └── 📁3D
+                └── Chess.jsx
+            └── 📁cloudinary
+                └── cloudinaryUploadWidget.jsx
         ── 📁utils
-            ── 📁supabase
-                ── supabase.js
-            ── getBase64.js
-         App.jsx
-         index.css
-         main.jsx
-         setupTests.js
-     .dockerignore
-     .editorconfig
-     .env
-     .env.example
-     .gitignore
-     .prettierrc
-     ARCHITECTURE.md
-     docker-compose.yaml
-     eslint.config.js
-     index.html
-     LICENSE.md
-     package.json
-     pnpm-lock.yaml
-     postcss.config.js
-     README.md
-     tailwind.config.js
-     vercel.json
-     vite.config.js
+            └── 📁supabase
+                └── supabase.js
+            └── getBase64.js
+        ── App.jsx
+        ── index.css
+        ── main.jsx
+        ── setupTests.js
+    ── .dockerignore
+    ── .editorconfig
+    ── .env
+    ── .env.example
+    ── .gitignore
+    ── .prettierrc
+    ── ARCHITECTURE.md
+    ── CONTRIBUTING.md
+    ── docker-compose.yaml
+    ── Dockerfile
+    ── eslint.config.js
+    ── index.html
+    ── LICENSE.md
+    ── package.json
+    ── pnpm-lock.yaml
+    ── postcss.config.js
+    ── README.md
+    ── tailwind.config.js
+    ── vercel.json
+    ── vite.config.js
 ```
