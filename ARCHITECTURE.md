@@ -92,7 +92,6 @@
         ── setupTests.js
     ── .dockerignore
     ── .editorconfig
-    ── .env
     ── .env.example
     ── .gitignore
     ── .prettierrc
