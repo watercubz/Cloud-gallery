@@ -1,6 +1,6 @@
 # 🌩️ MTAAI-core
 
-**MTAAI-core** What is MTAAI-core or Marketing Tracking and Advertising Improvement through AI, is a service designed for new entrepreneurs through our platform that integrates AI. You will be able to connect your networks, whether Facebook and Instagram, and manage your advertising through AI.
+What is MTAAI-core or Marketing Tracking and Advertising Improvement through AI, is a service designed for new entrepreneurs through our platform that integrates AI. You will be able to connect your networks, whether Facebook and Instagram, and manage your advertising through AI.
 
 ## 📖 Is it Open Source?
 
