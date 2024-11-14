@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import supabase from '../utils/supabase/supabase';
-import Loading from '../features/ui/Loading';
+import Loading from '../core/ui/Loading';
 
 export default function useAuthSession() {
   const [loading, setLoading] = useState(true);
