@@ -1,7 +1,12 @@
 services:
   react-app:
-    image: atxpaul/react.app:latest
+    image: watercubz/cloud-gallery.app:latest
     ports:
       - '5173:80'
     env_file:
       - .env
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '3'
