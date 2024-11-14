@@ -32,8 +32,8 @@ jobs:
 
       - name: Install ESLint
         run: |
-          pnpm add eslint@8.10.0
-          pnpm add @microsoft/eslint-formatter-sarif@3.1.0
+          npm i eslint@8.10.0
+          npm i @microsoft/eslint-formatter-sarif@3.1.0
 
 
       - name: Run ESLint
