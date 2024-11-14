@@ -143,7 +143,7 @@ Rebuild the Containers: If you make changes to the Docker configuration or code,
 docker-compose up --build
 ```
 
-## 🤝 Contribution Guide for **MTAAI-corey**
+## 🤝 Contribution Guide for **MTAAI-core**
 
 Thank you for your interest in improving MTAAI-core! Please follow these three simple steps to submit your contributions:
 
