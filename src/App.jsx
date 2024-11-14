@@ -7,7 +7,7 @@ import Loading from './core/ui/Loading';
 import PrivacyPolicy from './core/terms/components/PrivacyPolicy';
 
 const NotificationPage = React.lazy(
-  () => import('./core/notification/page/page'),
+  () => import('./core/notification/page/PageNotfication'),
 );
 const Terms = React.lazy(() => import('./core/terms/components/Terms'));
 
