@@ -1,10 +1,10 @@
-# 🌩️ Cloud Gallery
+# 🌩️ MTAAI-core
 
-**Cloud Gallery** is a public cloud-style app where you can upload your most random photos and share them with the world. Powered by AI, it also lets you generate stories and analyze photo content.
+**MTAAI-core** What is MTAAI-core or Marketing Tracking and Advertising Improvement through AI, is a service designed for new entrepreneurs through our platform that integrates AI. You will be able to connect your networks, whether Facebook and Instagram, and manage your advertising through AI.
 
 ## 📖 Is it Open Source?
 
-If **Cloud Gallery** is open source, you can contribute by enhancing the app, adding new features, fixing bugs, and more. Your contributions help improve the project and benefit the community!
+If **MTAAI-core** is open source, you can contribute by enhancing the app, adding new features, fixing bugs, and more. Your contributions help improve the project and benefit the community!
 
 ## ⚙️ Setup
 
@@ -18,11 +18,6 @@ If **Cloud Gallery** is open source, you can contribute by enhancing the app, ad
 
 ---
 
-To use this project, you'll need your Cloudinary credentials. You will need the following:
-
-- **Cloud Name**: Your Cloudinary account name.
-- **API Key and Secret**: The API key, followed by a colon, and then the secret API key (e.g., `7374ee773ufyye3:2372372737273ee2372`).
-
 ### Steps for Configuration
 
 1. **Create a `.env` file** in the root of your project (if you don’t have one already).
@@ -30,9 +25,6 @@ To use this project, you'll need your Cloudinary credentials. You will need the 
 2. **Add the following variables** to the `.env` file:
 
    ```env
-   VITE_PUBLIC_CLOUD_NAME="your_cloud_name_here"  # e.g., "my_cloud"
-   VITE_SECRET_API_KEY="7374ee773ufyye3:2372372737273ee2372"  # API Key and Secret
-   VITE_CLOUDINARY_FOLDER="your_folder_here"       # e.g., "uploads"
    VITE_GOOGLE_GEMINI_API="your_gemini-api-key"    # e.g., "eru4uwu4422ueeesd32frt5434eerr"
    VITE_SUPABASE_URL="your-supabase-url"           # e.g., "https://supa.xdrovbk.co"
    VITE_SUPABASE_ANON_KEY="your-supabase-anon-key"
@@ -68,7 +60,7 @@ Or, using yarn:
 yarn add && yarn run dev
 ```
 
-## 🐳 Setup Guide for Running **Cloud Gallery** with Docker
+## 🐳 Setup Guide for Running **MTAAI-core** with Docker
 
 Follow these steps to set up and run Cloud Gallery using Docker.
 
@@ -85,7 +77,7 @@ Follow these steps to set up and run Cloud Gallery using Docker.
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/cloud-gallery.git
+git clone github.com/your-name/MTAAI-core.git
 cd cloud-gallery
 ```
 
@@ -95,9 +87,6 @@ Add necessary environment variables for Cloud Gallery, such as database credenti
 Example .env file:
 
   ```env
-   VITE_PUBLIC_CLOUD_NAME="your_cloud_name_here"  # e.g., "my_cloud"
-   VITE_SECRET_API_KEY="7374ee773ufyye3:2372372737273ee2372"  # API Key and Secret
-   VITE_CLOUDINARY_FOLDER="your_folder_here"       # e.g., "uploads"
    VITE_GOOGLE_GEMINI_API="your_gemini-api-key"    # e.g., "eru4uwu4422ueeesd32frt5434eerr"
    VITE_SUPABASE_URL="your-supabase-url"           # e.g., "https://supa.xdrovbk.co"
    VITE_SUPABASE_ANON_KEY="your-supabase-anon-key"
@@ -108,7 +97,7 @@ Add any other necessary variables here
 Build the Docker images using Dockerfile:
 
 ```
-docker build -t atxpaul/react.app
+docker build -t a watercubz/MTAAI-core.app
 ```
 This command will create the necessary Docker images for the application and its dependencies (e.g., database, web server).
 
@@ -142,9 +131,9 @@ Rebuild the Containers: If you make changes to the Docker configuration or code,
 docker-compose up --build
 ```
 
-## 🤝 Contribution Guide for **Cloud Gallery**
+## 🤝 Contribution Guide for **MTAAI-corey**
 
-Thank you for your interest in improving Cloud Gallery! Please follow these three simple steps to submit your contributions:
+Thank you for your interest in improving MTAAI-core! Please follow these three simple steps to submit your contributions:
 
 ## Step 1: Description of the Issue or Feature
 
@@ -154,7 +143,7 @@ Thank you for your interest in improving Cloud Gallery! Please follow these thre
 Example:
 ```markdown
 **Description**: The app freezes when trying to upload an image larger than 5MB.
-**Technical Details**: Windows 10, Chrome 114, Cloud Gallery version 1.2.3.
+**Technical Details**: Windows 10, Chrome 114, MTAAI-core version 1.2.3.
 ```
 
 ## Step 2: Create a New Branch
@@ -185,7 +174,7 @@ App Impact: Explain how your contribution improves the application or solves the
 
 That’s it! After following these steps, submit your pull request, and our team will review your contribution.
 
-Thank you for making Cloud Gallery a better application
+Thank you for making MTAAI-core a better application
 
 
 ## 📁 Project Structure
