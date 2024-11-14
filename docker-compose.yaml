@@ -1,6 +1,6 @@
 services:
   react-app:
-    image: watercubz/cloud-gallery.app:latest
+    image: watercubz/mtaai-core.app:latest
     ports:
       - '5173:80'
     env_file:
