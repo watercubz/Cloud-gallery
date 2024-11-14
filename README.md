@@ -62,7 +62,7 @@ yarn add && yarn run dev
 
 ## 🐳 Setup Guide for Running **MTAAI-core** with Docker
 
-Follow these steps to set up and run Cloud Gallery using Docker.
+Follow these steps to set up and run MTAAI-core using Docker.
 
 ## Prerequisites
 
@@ -79,13 +79,13 @@ First, clone the repository to your local machine:
 
 ```bash
 git clone github.com/your-name/MTAAI-core.git
-cd cloud-gallery
+cd MTAAI-core
 ```
 
 ## Step 2: Set Up Environment Variables
 
 Create an .env file in the project root if one doesn’t already exist.
-Add necessary environment variables for Cloud Gallery, such as database credentials, API keys, and any other required configuration.
+Add necessary environment variables for MTAAI-core, such as database credentials, API keys, and any other required configuration.
 Example .env file:
 
 ```env
