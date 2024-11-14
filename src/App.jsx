@@ -1,22 +1,31 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ProtectedRoute from './features/auth/components/ProtecteRoutes';
-import Home from './features/gallery/pages/Home';
+import ProtectedRoute from './core/auth/components/ProtecteRoutes';
+import Home from './core/home/pages/Home';
 
 import React, { Suspense } from 'react';
-import Loading from './features/ui/Loading';
+import Loading from './core/ui/Loading';
+import PrivacyPolicy from './core/terms/components/PrivacyPolicy';
+
+const NotificationPage = React.lazy(
+  () => import('./core/notification/page/page'),
+);
+const Terms = React.lazy(() => import('./core/terms/components/Terms'));
 
 const AuthComponent = React.lazy(
-  () => import('./features/auth/components/AuthComponent'),
+  () => import('./core/auth/components/AuthComponent'),
 );
-const Sidebar = React.lazy(() => import('./features/Layouts/SideBar'));
+const Sidebar = React.lazy(() => import('./core/Layouts/SideBar'));
+
 const ChatComponent = React.lazy(
-  () => import('./features/chats/componentes/chatComponent'),
+  () => import('./core/chats/componentes/chatComponent'),
 );
-const PageAI = React.lazy(() => import('./features/ai/components/PageText'));
-const PageImage = React.lazy(
-  () => import('./features/ai/components/PageImage'),
-);
-const Pricing = React.lazy(() => import('./features/pricing/pages/Pricing'));
+
+const PageAI = React.lazy(() => import('./core/ai/components/PageText'));
+
+const PageImage = React.lazy(() => import('./core/ai/components/PageImage'));
+
+const Pricing = React.lazy(() => import('./core/pricing/pages/Pricing'));
+
 const Toaster = React.lazy(() =>
   import('react-hot-toast').then((module) => ({ default: module.Toaster })),
 );
@@ -76,12 +85,38 @@ export default function App() {
       ),
     },
     {
+      path: '/notification',
+      element: (
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <NotificationPage />
+          </ProtectedRoute>
+        </Suspense>
+      ),
+    },
+    {
       path: '/pricing',
       element: (
         <Suspense fallback={<Loading />}>
           <ProtectedRoute>
             <Pricing />
           </ProtectedRoute>
+        </Suspense>
+      ),
+    },
+    {
+      path: '/terms',
+      element: (
+        <Suspense fallback={<Loading />}>
+          <Terms />
+        </Suspense>
+      ),
+    },
+    {
+      path: '/privacy',
+      element: (
+        <Suspense fallback={<Loading />}>
+          <PrivacyPolicy />
         </Suspense>
       ),
     },
