@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import AiText from '../ui/AiText';
 import AImage from '../ui/AImage';
-import UploadFile from '../ui/UploadFile';
 
 export function SidebarDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,9 +33,6 @@ export function SidebarDropdown() {
       </button>
       {isOpen && (
         <div className="mt-2">
-          <div className="py-2 px-4 cursor-pointer">
-            <UploadFile />
-          </div>
           <div className="py-2 px-4 cursor-pointer">
             <AiText />
           </div>

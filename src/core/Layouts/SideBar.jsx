@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import GalleryComponent from '../gallery/components/GalleryComponent';
 import DocsComponet from '../docs/components/DocsComponet';
 
-import ImboxComponent from '../auth/pages/ImboxComponent';
+import ImboxComponent from '../notification/components/ImboxComponent';
 import ProductsComponent from '../Layouts/ProductsComponent';
 
 import PricingButton from '../pricing/components/PricingButton';
@@ -12,6 +11,8 @@ import PageChat from '../chats/pages/page';
 
 import supabase from '../../utils/supabase/supabase';
 import LogoutComponent from '../profile/components/LogoutComponent';
+import Graphicpt from '../home/components/Graphicpt';
+import ThemeDropdown from './DropdownTheme';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -37,13 +38,12 @@ export default function Sidebar() {
     ImageProfile();
   }, []);
 
-  let urlProfile = `https://github.com/${name || null}`;
-
   return (
     <div className="flex flex-col items-center justify-center min-h-screen font-sans bg-gray-50 dark:bg-gray-950">
       <h2 className="text-3xl font-bold mb-10 mt-10  text-amber-600">
-        Gallery Photos
+        Statistics
       </h2>
+      <ThemeDropdown />
       <div className="flex justify-end w-full">
         <button
           className="absolute top-4 right-4 py-2 px-4  bg-gray-50 dark:bg-gray-950 transition-colors duration-150 border border-zinc-500 rounded-lg z-20"
@@ -88,7 +88,6 @@ export default function Sidebar() {
           </svg>
         </button>
       </div>
-
       {open && (
         <div className="fixed inset-0 z-50 overflow-hidden">
           <div className="absolute inset-0 bg-gray-500 bg-opacity-75"></div>
@@ -98,7 +97,7 @@ export default function Sidebar() {
               <div className="h-full flex flex-col py-6 bg-white shadow-xl dark:bg-gray-950 ">
                 <div className="flex items-center justify-between px-4">
                   <h2 className="text-4 font-bold text-amber-600">
-                    Cloud Gallery
+                    MTAAI-core
                     <div className="flex items-center">
                       {image ? (
                         <div className="flex items-center">
@@ -108,8 +107,7 @@ export default function Sidebar() {
                             className="h-10 w-10 rounded-full mr-2 mt-3 "
                           />
                           <a
-                            className="text-lg font-medium   dark:text-slate-400 text-slate-700 mt-2 hover:text-slate-500 cursor-pointer"
-                            href={urlProfile}
+                            className="text-lg font-medium   dark:text-slate-300 text-slate-900 mt-2 cursor-pointer"
                             target="_blank"
                           >
                             {name}
@@ -158,9 +156,8 @@ export default function Sidebar() {
           </section>
         </div>
       )}
-
       <main className="flex justify-center items-center min-h-screen font-sans py-6  bg-gray-50 dark:bg-gray-950">
-        <GalleryComponent />
+        <Graphicpt />
       </main>
     </div>
   );

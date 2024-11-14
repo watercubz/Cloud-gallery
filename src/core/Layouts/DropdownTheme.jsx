@@ -12,12 +12,6 @@ export default function ThemeDropdown() {
     } else if (theme === 'light') {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
-    } else {
-      const systemPrefersDark = window.matchMedia(
-        '(prefers-color-scheme: system )',
-      ).matches;
-      document.documentElement.classList.toggle('light', systemPrefersDark);
-      localStorage.setItem('theme', 'system');
     }
   }, [theme]);
 
@@ -50,12 +44,6 @@ export default function ThemeDropdown() {
             className="w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
           >
             Oscuro
-          </button>
-          <button
-            onClick={() => handleThemeChange('system')}
-            className="w-full px-4 py-2 text-left text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-          >
-            Sistema
           </button>
         </div>
       )}
