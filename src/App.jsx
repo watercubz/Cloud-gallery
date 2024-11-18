@@ -4,12 +4,15 @@ import Home from '../src/core/home/pages/Home';
 
 import React, { Suspense } from 'react';
 import Loading from '../src/ui/Loading';
-import PrivacyPolicy from '../src/terms/components/PrivacyPolicy';
 
 const NotificationPage = React.lazy(
   () => import('./core/notification/page/PageNotfication'),
 );
 const Terms = React.lazy(() => import('./terms/components/Terms'));
+
+const PrivacyPolicy = React.lazy(
+  () => import('../src/terms/components/PrivacyPolicy'),
+);
 
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent'),
