@@ -1,5 +1,5 @@
 import TermsCard from './TermsCard';
-import { Terms } from '../../constants/Testimonials';
+import { Terms } from '../../constants/Terms';
 const TermsAndConditions = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-8 flex items-center justify-center">
