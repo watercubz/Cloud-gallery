@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AiText from '../ui/AiText';
-import AImage from '../ui/AImage';
+import AiText from '../../ui/AiText';
+import AImage from '../../ui/AImage';
 
 export function SidebarDropdown() {
   const [isOpen, setIsOpen] = useState(false);

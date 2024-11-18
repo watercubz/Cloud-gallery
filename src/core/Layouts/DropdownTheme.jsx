@@ -2,24 +2,28 @@ import { useState, useEffect } from 'react';
 import { IoSunny, IoMoon, IoDesktop } from 'react-icons/io5';
 
 export default function ThemeDropdown() {
-  const [theme, setTheme] = useState('system');
+  const [theme, setTheme] = useState(
+    () => localStorage.getItem('theme') || 'light',
+  );
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
+      document.documentElement.classList.remove('light');
     } else if (theme === 'light') {
+      document.documentElement.classList.add('light');
       document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
     }
   }, [theme]);
 
   const handleThemeChange = (newTheme) => {
-    setTheme(newTheme);
+    if (newTheme === 'dark' || newTheme === 'light') {
+      setTheme(newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
     setIsDropdownOpen(false);
   };
-
   return (
     <div className="relative ml-5">
       <button

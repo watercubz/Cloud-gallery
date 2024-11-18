@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import DocsComponet from '../docs/components/DocsComponet';
+import DocsComponet from '../../docs/components/DocsComponet';
 
 import ImboxComponent from '../notification/components/ImboxComponent';
 import ProductsComponent from '../Layouts/ProductsComponent';
 
-import PricingButton from '../pricing/components/PricingButton';
+import PricingButton from '../../pricing/components/PricingButton';
 import PageChat from '../chats/pages/page';
 
 import supabase from '../../utils/supabase/supabase';
-import LogoutComponent from '../profile/components/LogoutComponent';
+import LogoutComponent from '../../profile/components/LogoutComponent';
 import Graphicpt from '../home/components/Graphicpt';
 import ThemeDropdown from './DropdownTheme';
 
@@ -41,7 +41,7 @@ export default function Sidebar() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen font-sans bg-gray-50 dark:bg-gray-950">
       <h2 className="text-3xl font-bold mb-10 mt-10  text-amber-600">
-        Statistics
+        Dashboard
       </h2>
       <ThemeDropdown />
       <div className="flex justify-end w-full">
@@ -90,8 +90,6 @@ export default function Sidebar() {
       </div>
       {open && (
         <div className="fixed inset-0 z-50 overflow-hidden">
-          <div className="absolute inset-0 bg-gray-500 bg-opacity-75"></div>
-
           <section className="absolute inset-y-0 right-0 pl-10 max-w-full flex">
             <div className="w-screen max-w-md transform transition-transform duration-300">
               <div className="h-full flex flex-col py-6 bg-white shadow-xl dark:bg-gray-950 ">
