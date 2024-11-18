@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import supabase from '../utils/supabase/supabase';
-import Loading from '../core/ui/Loading';
+import Loading from '../ui/Loading';
 
 export default function useAuthSession() {
   const [loading, setLoading] = useState(true);
@@ -15,14 +15,13 @@ export default function useAuthSession() {
         setLoading(false);
         console.log(data);
 
-        return; // No continúes si hay un error
+        return;
       }
 
       if (data.session) {
-        // Si hay una sesión activa, redirigir al usuario a la página /app
         navigate('/app');
       } else {
-        setLoading(false); // Solo cambiar a false si no hay sesión
+        setLoading(false);
       }
     };
 
