@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './core/auth/components/ProtecteRoutes';
-import Home from './core/home/pages/Home';
+import Home from '../src/core/home/pages/Home';
 
 import React, { Suspense } from 'react';
-import Loading from './core/ui/Loading';
-import PrivacyPolicy from './core/terms/components/PrivacyPolicy';
+import Loading from '../src/ui/Loading';
+import PrivacyPolicy from '../src/terms/components/PrivacyPolicy';
 
 const NotificationPage = React.lazy(
   () => import('./core/notification/page/PageNotfication'),
 );
-const Terms = React.lazy(() => import('./core/terms/components/Terms'));
+const Terms = React.lazy(() => import('./terms/components/Terms'));
 
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent'),
@@ -24,7 +24,7 @@ const PageAI = React.lazy(() => import('./core/ai/components/PageText'));
 
 const PageImage = React.lazy(() => import('./core/ai/components/PageImage'));
 
-const Pricing = React.lazy(() => import('./core/pricing/pages/Pricing'));
+const Pricing = React.lazy(() => import('./pricing/pages/Pricing'));
 
 const Toaster = React.lazy(() =>
   import('react-hot-toast').then((module) => ({ default: module.Toaster })),
