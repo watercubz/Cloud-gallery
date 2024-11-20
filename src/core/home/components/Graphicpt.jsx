@@ -7,7 +7,7 @@ export default function Graphicpt() {
   return (
     <div className="p-6 dark:bg-gray-950 min-h-screen">
       <div className="text-black dark:text-white mt-10 font-bold text-2xl m-2">
-        Welcome: {name}
+        <span>Welcome</span>: {name}
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-4">
