@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { getBase64 } from '../../../utils/getBase64.js';
-import Loading from '../../ui/Loading.jsx';
+import { getBase64 } from '../../../services/getBase64.js';
+import Loading from '../../../ui/Loading.jsx';
 import toast from 'react-hot-toast';
 
 export default function ImageDetect() {
@@ -87,7 +87,7 @@ export default function ImageDetect() {
         className="py-2.5 px-5 text-sm font-medium text-white bg-gray-800 rounded-lg border border-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-purple-300 mb-4"
         onClick={handleClick}
       >
-        ¿Qué hay en la foto?
+        Generate recommendation
       </button>
 
       {image && (

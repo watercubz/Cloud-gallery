@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import Loading from '../../ui/Loading';
+import Loading from '../../../ui/Loading';
 import toast from 'react-hot-toast';
 
 export default function TextGenerateIA() {
@@ -16,7 +16,7 @@ export default function TextGenerateIA() {
     setLoading(true);
     setIaResponse('');
     const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-1.5-pro',
     });
     const prompt = `
     Eres un escritor talentoso que puede generar cuentos de cualquier tipo. Cuando el usuario te dé una descripción o un tema ${search}, utiliza esa información para crear una historia creativa y cautivadora. Asegúrate de que tus relatos sean originales y entretenidos, adaptándote a los deseos y preferencias del usuario.
@@ -45,7 +45,9 @@ export default function TextGenerateIA() {
 
   const handleClick = () => {
     if (search.trim() === '') {
-      toast.error('Please describe a story or history');
+      toast.error(
+        'Please paste the text of your ad so we can analyze it and give you a recommendation.',
+      );
     } else {
       AI();
       setSearch('');
@@ -61,7 +63,7 @@ export default function TextGenerateIA() {
       <div className="flex flex-col md:flex-row w-full max-w-lg space-y-4 md:space-y-0 md:space-x-4">
         <input
           className="block w-full p-4 text-sm text-white border border-gray-500 rounded-lg bg-gray-800 outline-none"
-          placeholder="Describe tu historia...."
+          placeholder="text...."
           value={search}
           onChange={handleSearch}
           maxLength={200}

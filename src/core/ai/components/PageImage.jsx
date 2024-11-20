@@ -31,7 +31,7 @@ export default function PageImage() {
           </svg>
         </button>
         <h1 className="text-center text-3xl font-medium mt-8 text-gray-300">
-          Analiza el contenido de la imagen
+          Analyze your advertising photo
         </h1>
 
         <div className="w-full max-w-lg">

@@ -30,11 +30,10 @@ export default function PageAI() {
             />
           </svg>
         </button>
-        <h1 className="text-center text-3xl font-medium mt-8 text-gray-300">
-          GENERA HISTORIAS O CUENTOS
-        </h1>
-
-        <div className="w-full max-w-lg mb-[300px]">
+        <div className="w-full max-w-lg mt-10 px-4 mx-auto">
+          <h1 className="text-center text-2xl font-medium mb-2 text-gray-300 sm:text-3xl">
+            Improve your advertising text
+          </h1>
           <TextGenerateAI />
         </div>
       </div>
