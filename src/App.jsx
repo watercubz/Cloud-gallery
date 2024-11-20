@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './core/auth/components/ProtecteRoutes';
-import Home from '../src/core/home/pages/Home';
 
 import React, { Suspense } from 'react';
 import Loading from '../src/ui/Loading';
@@ -29,6 +28,8 @@ const PageImage = React.lazy(() => import('./core/ai/components/PageImage'));
 
 const Pricing = React.lazy(() => import('./pricing/pages/Pricing'));
 
+const Home = React.lazy(() => import('../src/core/home/pages/Home'));
+
 const Toaster = React.lazy(() =>
   import('react-hot-toast').then((module) => ({ default: module.Toaster })),
 );
@@ -37,7 +38,11 @@ export default function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Home />,
+      element: (
+        <Suspense fallback={<Loading />}>
+          <Home />,
+        </Suspense>
+      ),
     },
     {
       path: '/auth',
