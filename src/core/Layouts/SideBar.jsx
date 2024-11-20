@@ -11,8 +11,9 @@ import PageChat from '../chats/pages/page';
 
 import supabase from '../../utils/supabase/supabase';
 import LogoutComponent from '../../profile/components/LogoutComponent';
-import Graphicpt from '../home/components/Graphicpt';
+
 import ThemeDropdown from './DropdownTheme';
+import { ConfirmationComponent } from '../../terms/components/Agreed';
 
 export default function Sidebar() {
   const [open, setOpen] = useState(false);
@@ -104,12 +105,9 @@ export default function Sidebar() {
                             alt="Profile"
                             className="h-10 w-10 rounded-full mr-2 mt-3 "
                           />
-                          <a
-                            className="text-lg font-medium   dark:text-slate-300 text-slate-900 mt-2 cursor-pointer"
-                            target="_blank"
-                          >
+                          <p className="text-lg font-medium   dark:text-slate-300 text-slate-900 mt-2 cursor-pointer">
                             {name}
-                          </a>
+                          </p>
                         </div>
                       ) : (
                         <p className="text-red-600">Error</p>
@@ -155,7 +153,7 @@ export default function Sidebar() {
         </div>
       )}
       <main className="flex justify-center items-center min-h-screen font-sans py-6  bg-gray-50 dark:bg-gray-950">
-        <Graphicpt />
+        <ConfirmationComponent />
       </main>
     </div>
   );

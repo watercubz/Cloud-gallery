@@ -13,7 +13,7 @@ export default function AiText() {
       className="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all  text-black dark:text-white outline-none"
     >
       <button onClick={handleAI} className="hover:text-blue-500">
-        AI
+        Text analyzer
       </button>
     </div>
   );

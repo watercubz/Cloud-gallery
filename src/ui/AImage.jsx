@@ -15,7 +15,7 @@ export default function AImage() {
         onClick={handleImage}
         className="hover:text-blue-500  text-black  dark:text-white"
       >
-        AI Image
+        Image Analyzer
       </button>
     </div>
   );
