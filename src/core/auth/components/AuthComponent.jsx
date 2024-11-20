@@ -1,4 +1,3 @@
-import CloudLogo from '../../../assets/img/Logo-cloudv2.png';
 import { Github } from '@react-symbols/icons';
 import { FaGoogle } from 'react-icons/fa';
 import useAuthSession from '../../../hooks/useAuthSession';
@@ -35,8 +34,8 @@ export default function AuthComponent() {
           href="#"
           className="flex items-center mb-6 text-2xl font-medium text-amber-600"
         >
-          <img className="w-20 h-20 mr-2" src={CloudLogo} alt="logo" />
-          Cloud Gallery
+          <img className="w-20 h-20 mr-2" alt="logo" />
+          MTAAI-core
         </a>
         <section className="w-full bg-gray-100 rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">

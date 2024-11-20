@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import supabase from '../../../utils/supabase/supabase';
 import { Navigate } from 'react-router-dom';
-import Loading from '../../ui/Loading';
+import Loading from '../../../ui/Loading';
 
 export default function ProtectedRoute({ children }) {
   const [loading, setLoading] = useState(true);
@@ -21,14 +21,11 @@ export default function ProtectedRoute({ children }) {
     checkSession();
   }, []);
 
-  // Muestra "Cargando..." mientras se verifica la sesión
   if (loading) return <Loading />;
 
-  // Si no hay sesión, redirige a la página de autenticación
   if (!isAuthenticated) {
     return <Navigate to="/auth" replace />;
   }
 
-  // Si hay sesión, muestra el contenido protegido
   return children;
 }
