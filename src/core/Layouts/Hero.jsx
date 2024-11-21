@@ -4,7 +4,7 @@ export default function Hero() {
   const navigate = useNavigate();
 
   const handelStarted = () => {
-    navigate('/app');
+    navigate('/');
   };
 
   return (
