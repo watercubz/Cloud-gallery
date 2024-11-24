@@ -14,12 +14,12 @@ const PrivacyPolicy = React.lazy(
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent.jsx'),
 );
-const SideBar = React.lazy(() => import('./core/layouts/Sidebar.jsx'));
+const SideBar = React.lazy(() => import('./core/Layouts/Sidebar.jsx'));
 const ChatComponent = React.lazy(
   () => import('./core/chats/componentes/chatComponent.jsx'),
 );
 const ConnectAccount = React.lazy(
-  () => import('./core/layouts/ConnectComponet'),
+  () => import('./core/Layouts/ConnectComponet.jsx'),
 );
 const Profile = React.lazy(() => import('./profile/pages/Profile.jsx'));
 const PageAI = React.lazy(() => import('./core/ai/components/PageText.jsx'));
