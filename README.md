@@ -150,4 +150,4 @@ See Project Structure
 
 ---
 
-By following these guidelines, you help us improve the project and make it better for everyone!
+💚
