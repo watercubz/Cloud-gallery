@@ -2,168 +2,122 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './core/auth/components/ProtecteRoutes';
 import './translations/i18n.js';
 import React, { Suspense } from 'react';
-import Loading from '../src/ui/Loading';
+import Loading from './ui/Loading';
 
 const NotificationPage = React.lazy(
   () => import('./core/notification/page/PageNotfication'),
 );
 const Terms = React.lazy(() => import('./terms/components/Terms'));
-
 const PrivacyPolicy = React.lazy(
-  () => import('../src/terms/components/PrivacyPolicy'),
+  () => import('./terms/components/PrivacyPolicy'),
 );
-
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent'),
 );
-
 const Sidebar = React.lazy(() => import('./core/layouts/SideBar'));
-
 const ChatComponent = React.lazy(
   () => import('./core/chats/componentes/chatComponent'),
 );
-
 const ConnectAccount = React.lazy(
-  () => import('./core/layouts/ConnectComponet.jsx'),
+  () => import('./core/layouts/ConnectComponet'),
 );
-
-const Profile = React.lazy(() => import('./profile/pages/Profile.jsx'));
-
+const Profile = React.lazy(() => import('./profile/pages/Profile'));
 const PageAI = React.lazy(() => import('./core/ai/components/PageText'));
-
 const PageImage = React.lazy(() => import('./core/ai/components/PageImage'));
-
 const Pricing = React.lazy(() => import('./pricing/pages/Pricing'));
-
-const Home = React.lazy(() => import('../src/core/home/pages/Home'));
-
+const Home = React.lazy(() => import('./core/home/pages/Home'));
 const Toaster = React.lazy(() =>
   import('react-hot-toast').then((module) => ({ default: module.Toaster })),
 );
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/auth',
+    element: <AuthComponent />,
+  },
+  {
+    path: '/app',
+    element: (
+      <ProtectedRoute>
+        <Sidebar />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/chat',
+    element: (
+      <ProtectedRoute>
+        <ChatComponent />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/ai',
+    element: (
+      <ProtectedRoute>
+        <PageAI />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/image',
+    element: (
+      <ProtectedRoute>
+        <PageImage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/notification',
+    element: (
+      <ProtectedRoute>
+        <NotificationPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/connect',
+    element: (
+      <ProtectedRoute>
+        <ConnectAccount />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/pricing',
+    element: (
+      <ProtectedRoute>
+        <Pricing />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/profile',
+    element: (
+      <ProtectedRoute>
+        <Profile />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/terms',
+    element: <Terms />,
+  },
+  {
+    path: '/privacy',
+    element: <PrivacyPolicy />,
+  },
+]);
+
 export default function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <Home />,
-        </Suspense>
-      ),
-    },
-    {
-      path: '/auth',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <AuthComponent />
-        </Suspense>
-      ),
-    },
-    {
-      path: '/app',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <Sidebar />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/chat',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <ChatComponent />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/ai',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <PageAI />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/image',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <PageImage />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/notification',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <NotificationPage />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/connect',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <ConnectAccount />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/pricing',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <Pricing />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/profile',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <ProtectedRoute>
-            <Profile />
-          </ProtectedRoute>
-        </Suspense>
-      ),
-    },
-    {
-      path: '/terms',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <Terms />
-        </Suspense>
-      ),
-    },
-    {
-      path: '/privacy',
-      element: (
-        <Suspense fallback={<Loading />}>
-          <PrivacyPolicy />
-        </Suspense>
-      ),
-    },
-  ]);
-
   return (
-    <>
-      <Suspense fallback={<Loading />}>
-        <Toaster />
-      </Suspense>
-
+    <Suspense fallback={<Loading />}>
+      <Toaster />
       <RouterProvider router={router} />
-    </>
+    </Suspense>
   );
 }
