@@ -14,7 +14,7 @@ const PrivacyPolicy = React.lazy(
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent.jsx'),
 );
-const Sidebar = React.lazy(() => import('./core/layouts/SideBar.jsx'));
+const SideBar = React.lazy(() => import('./core/layouts/SideBar.jsx'));
 const ChatComponent = React.lazy(
   () => import('./core/chats/componentes/chatComponent.jsx'),
 );
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
     path: '/app',
     element: (
       <ProtectedRoute>
-        <Sidebar />
+        <SideBar />
       </ProtectedRoute>
     ),
   },
