@@ -1,33 +1,33 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ProtectedRoute from './core/auth/components/ProtecteRoutes.jsx';
+import ProtectedRoute from './core/auth/components/ProtecteRoutes';
 import './translations/i18n.js';
 import React, { Suspense } from 'react';
-import Loading from './ui/Loading.jsx';
+import Loading from './ui/Loading';
 
 const NotificationPage = React.lazy(
-  () => import('./core/notification/page/PageNotfication.jsx'),
+  () => import('./core/notification/page/PageNotfication'),
 );
-const Terms = React.lazy(() => import('./terms/components/Terms.jsx'));
+const Terms = React.lazy(() => import('./terms/components/Terms'));
 const PrivacyPolicy = React.lazy(
-  () => import('./terms/components/PrivacyPolicy.jsx'),
+  () => import('./terms/components/PrivacyPolicy'),
 );
 const AuthComponent = React.lazy(
-  () => import('./core/auth/components/AuthComponent.jsx'),
+  () => import('./core/auth/components/AuthComponent'),
 );
-const SideBar = React.lazy(() => import('./core/Layouts/Sidebar.jsx'));
+const SideBar = React.lazy(() => import('./core/Layouts/Sidebar'));
 const ChatComponent = React.lazy(
-  () => import('./core/chats/componentes/chatComponent.jsx'),
+  () => import('./core/chats/componentes/chatComponent'),
 );
 const ConnectAccount = React.lazy(
-  () => import('./core/Layouts/ConnectComponet.jsx'),
+  () => import('./core/Layouts/ConnectComponet'),
 );
-const Profile = React.lazy(() => import('./profile/pages/Profile.jsx'));
-const PageAI = React.lazy(() => import('./core/ai/components/PageText.jsx'));
+const Profile = React.lazy(() => import('./profile/pages/Profile'));
+const PageAI = React.lazy(() => import('./core/ai/components/PageText'));
 const PageImage = React.lazy(
   () => import('./core/ai/components/PageImage.jsx'),
 );
-const Pricing = React.lazy(() => import('./pricing/pages/Pricing.jsx'));
-const Home = React.lazy(() => import('./core/home/pages/Home.jsx'));
+const Pricing = React.lazy(() => import('./pricing/pages/Pricing'));
+const Home = React.lazy(() => import('./core/home/pages/Home'));
 const Toaster = React.lazy(() =>
   import('react-hot-toast').then((module) => ({ default: module.Toaster })),
 );
