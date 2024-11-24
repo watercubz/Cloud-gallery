@@ -3,7 +3,7 @@ import ThemeDropdown from './DropdownTheme';
 import ImboxComponent from '../notification/components/ImboxComponent';
 import PricingButton from '../../pricing/components/PricingButton';
 import PageChat from '../chats/pages/page';
-import ProductsComponent from '../Layouts/ProductsComponent';
+import ProductsComponent from './ProductsComponent';
 import LanguageSwitcher from '../../translations/components/LanguageSwitcher';
 import { useTranslation } from 'react-i18next';
 

@@ -14,7 +14,7 @@ const PrivacyPolicy = React.lazy(
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent.jsx'),
 );
-const SideBar = React.lazy(() => import('./../src/core/layouts/SideBar.jsx'));
+const SideBar = React.lazy(() => import('./core/layouts/Sidebar.jsx'));
 const ChatComponent = React.lazy(
   () => import('./core/chats/componentes/chatComponent.jsx'),
 );
