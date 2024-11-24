@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { getBase64 } from '../../../services/getBase64.js';
+import { getBase64 } from '../../../utils/getBase64.js';
 import Loading from '../../../ui/Loading.jsx';
 import toast from 'react-hot-toast';
 
 export default function ImageDetect() {
   const [image, setImage] = useState('');
   const [imageInineData, setImageInlineData] = useState('');
-  const [aiResponse, setResponse] = useState('');
+  const [response, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
 
   const genKey = import.meta.env.VITE_GOOGLE_GEMINI_API;
@@ -18,7 +18,7 @@ export default function ImageDetect() {
     setLoading(true);
     setResponse('');
     const model = genAI.getGenerativeModel({
-      model: 'gemini-1.5-flash-latest',
+      model: 'gemini-1.5-pro',
     });
     const result = await model.generateContent([
       '¿Qué hay en esta foto?, eres una experta en detectar imaganes que te pasen los usuarios, puedes detectar calquier tipo de imagen y decirle al usario que hay en dichas imagen, caul quier tipo de foto inaporpiedad, sexual, desnudo, henatai, pornografia, oh que detectes como de niños, bebe ect, por favor de darle un aviso al usario que ese tipo de contenido es ilegal y puede ir a la carcel, si la imagen no tiene nada de lo anterior mensionado no tienes que notificar al usario',
@@ -98,13 +98,15 @@ export default function ImageDetect() {
         />
       )}
 
-      {loading && aiResponse === '' ? (
+      {loading && response === '' ? (
         <p className="mt-8 text-orange-600">
           <Loading />
         </p>
       ) : (
-        <div className="mt-8 text-center text-orange-700 font-bold">
-          <p>{aiResponse}</p>
+        <div className="mt-6 max-w-lg w-full mx-auto p-4 bg-gray-800 rounded-lg border border-gray-700">
+          <p className="text-gray-200 text-lg font-medium break-words">
+            {response}
+          </p>
         </div>
       )}
     </div>

@@ -33,7 +33,6 @@ export default function useAuthSession() {
       provider: 'github',
     });
     if (error) {
-      // Manejar el error
       console.error(error);
     }
   };
@@ -43,20 +42,14 @@ export default function useAuthSession() {
       provider: 'google',
     });
     if (error) {
-      // Manejar el error
       console.error(error);
     }
   };
 
   if (loading) return <Loading />;
 
-  const handleHome = () => {
-    navigate('/');
-  };
-
   return {
     handleLoginGithub,
     handleLoginGoogle,
-    handleHome,
   };
 }

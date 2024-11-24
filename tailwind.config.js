@@ -1,12 +1,19 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 
-import flowbite from 'flowbite-react/tailwind';
-
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', flowbite.content()],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/flowbite-react/**/*.js',
+  ],
   darkMode: 'class',
   theme: {
     extend: {},
   },
-  plugins: [flowbite.plugin()],
+  plugins: [
+    require('flowbite/plugin')({
+      charts: true,
+    }),
+  ],
 };

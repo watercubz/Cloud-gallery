@@ -98,14 +98,9 @@ export default function ChatComponent() {
   return (
     <>
       <div className="h-screen flex flex-col lg:flex-row">
-        <div className="hidden lg:block w-1/3 bg-gray-900 p-4 border-r border-gray-300">
-          <h2 className="text-xl font-semibold mb-4 text-white">Chats</h2>
-          <h3 className="text-gray-500">En proceso....</h3>
-        </div>
-
-        <div className="flex-1 flex flex-col bg-gray-900">
-          <div className="p-4 bg-gray-900 text-white flex items-center gap-3 border-b border-gray-300">
-            <h2 className="text-lg font-semibold">Public chat</h2>
+        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900">
+          <div className="p-4 bg-white dark:bg-gray-900 text-black dark:text-white flex items-center gap-3 border-b border-gray-300">
+            <h2 className="text-lg font-bold">help chat</h2>
             <button
               className="py-2 px-4 text-red-700 transition-colors duration-150 border-zinc-500 rounded-lg"
               onClick={handleHome}
@@ -128,7 +123,7 @@ export default function ChatComponent() {
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 bg-gray-900">
+          <div className="flex-1 overflow-y-auto p-4 bg-white dark:bg-gray-900">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -164,9 +159,9 @@ export default function ChatComponent() {
             ))}
           </div>
 
-          <div className="p-4 border-t bg-gray-900 flex gap-2 items-center">
+          <div className="p-4 border-t bg-white dark:bg-gray-900 flex gap-2 items-center">
             <input
-              className="w-1/4 p-2 rounded-lg border bg-gray-900 text-white focus:outline-none"
+              className="w-1/4 p-2 rounded-lg border bg-white dark:bg-gray-900 text-black dark:text-white focus:outline-none"
               value={name}
               disabled={true}
             />
@@ -175,7 +170,7 @@ export default function ChatComponent() {
               placeholder="Typing...."
               value={message}
               onChange={handleUserMessage}
-              className="flex-1 p-2 rounded-lg border bg-gray-900 text-white focus:outline-none"
+              className="flex-1 p-2 rounded-lg border bg-white dark:bg-gray-900 text-black dark:text-white focus:outline-none"
               onKeyUp={(e) => {
                 if (e.key === 'Enter') {
                   onSend();

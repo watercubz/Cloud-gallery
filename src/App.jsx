@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ProtectedRoute from './core/auth/components/ProtecteRoutes';
-
+import './translations/i18n.js';
 import React, { Suspense } from 'react';
 import Loading from '../src/ui/Loading';
 
@@ -16,11 +16,17 @@ const PrivacyPolicy = React.lazy(
 const AuthComponent = React.lazy(
   () => import('./core/auth/components/AuthComponent'),
 );
-const Sidebar = React.lazy(() => import('./core/Layouts/SideBar'));
+const Sidebar = React.lazy(() => import('./core/layouts/SideBar'));
 
 const ChatComponent = React.lazy(
   () => import('./core/chats/componentes/chatComponent'),
 );
+
+const ConnectAccount = React.lazy(
+  () => import('./core/layouts/ConnectComponet.jsx'),
+);
+
+const Profile = React.lazy(() => import('./profile/pages/Profile.jsx'));
 
 const PageAI = React.lazy(() => import('./core/ai/components/PageText'));
 
@@ -103,11 +109,31 @@ export default function App() {
       ),
     },
     {
+      path: '/connect',
+      element: (
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <ConnectAccount />
+          </ProtectedRoute>
+        </Suspense>
+      ),
+    },
+    {
       path: '/pricing',
       element: (
         <Suspense fallback={<Loading />}>
           <ProtectedRoute>
             <Pricing />
+          </ProtectedRoute>
+        </Suspense>
+      ),
+    },
+    {
+      path: '/profile',
+      element: (
+        <Suspense fallback={<Loading />}>
+          <ProtectedRoute>
+            <Profile />
           </ProtectedRoute>
         </Suspense>
       ),

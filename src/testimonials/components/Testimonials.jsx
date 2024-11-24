@@ -1,8 +1,12 @@
 import Footer from '../../core/Layouts/Footer';
 import { TestimonialCard } from './TestimonialsCard';
 import { testimonials } from '../../constants/Testimonials';
+import { useTranslation } from 'react-i18next';
+import CompaniesUsingComponent from './CompaniesUsing';
 
 export default function Testimonials() {
+  const { t } = useTranslation();
+
   const testimonialData = [
     {
       avatar: 'https://i.pravatar.cc/100?img=1',
@@ -24,16 +28,6 @@ export default function Testimonials() {
       name: 'Charlie Howse',
       text: testimonials.text4,
     },
-    {
-      avatar: 'https://i.pravatar.cc/100?img=5',
-      name: 'Nevada Herbertson',
-      text: testimonials.text5,
-    },
-    {
-      avatar: 'https://i.pravatar.cc/100?img=6',
-      name: 'Kris Stanton',
-      text: testimonials.text6,
-    },
   ];
 
   return (
@@ -42,11 +36,11 @@ export default function Testimonials() {
         <div className="w-full  px-5 py-16 md:py-24 text-gray-800  dark:text-gray-400 dark:bg-zinc-950">
           <div className="w-full max-w-6xl mx-auto ">
             <div className="text-center max-w-xl mx-auto">
-              <h1 className="text-6xl md:text-7xl font-bold mb-5 text-gray-600  dark:text-gray-400">
-                What people <br /> are saying.
+              <h1 className="text-6xl md:text-7xl font-bold mb-5 text-gray-600 text-pretty dark:text-gray-400">
+                {t('recomendations')}
               </h1>
-              <h3 className="text-xl mb-5 font-light">
-                about the open source platform MTAAI-core.
+              <h3 className="text-xl mb-6 font-light">
+                {t('title_recomendation')}
               </h3>
               <div className="text-center mb-10">
                 <span className="inline-block w-1 h-1 rounded-full bg-indigo-500 ml-1"></span>
@@ -69,6 +63,13 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="dark:bg-zinc-950">
+        <h2 className="text-center text-3xl font-semibold text-gray-900 dark:text-gray-200">
+          {t('Companies')}
+        </h2>
+        <CompaniesUsingComponent />
       </div>
       <div className="bg-slate-900">
         <Footer />

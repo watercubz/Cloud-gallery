@@ -6,7 +6,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 dark:text-gray-400 uppercase ">
-                MORE ABOUT MTAAI-core
+                COMPANY
               </h2>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
@@ -27,7 +27,7 @@ export default function Footer() {
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a
-                    href="https://discord.gg/5wsTbAJU"
+                    href="https://discord.gg/KvpHYXC9GM"
                     target="_blank"
                     className="hover:underline"
                   >
@@ -89,7 +89,7 @@ export default function Footer() {
             </span>
             <div className="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
               <a
-                href="https://discord.gg/5wsTbAJU"
+                href="https://discord.gg/KvpHYXC9GM"
                 target="_blank"
                 className="text-gray-400 hover:text-gray-900 "
               >
