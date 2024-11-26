@@ -8,7 +8,21 @@ export default function ChatComponent() {
   const [search, setSearch] = useState('');
   const [iaResponse, setIaResponse] = useState('');
   const [loading, setLoading] = useState(false);
-  const [messages, setMessages] = useState([]);
+  let links = 'https://github.com/htmlstreamofficial/preline';
+  const [messages, setMessages] = useState([
+    {
+      sender: 'AI',
+      text: `Hey there, thanks for checking out Preline UI!
+
+If you would like to report a bug or are having a technical issue, please open an issue on GitHub here: ${links}
+
+For any other inquiries, such as license, pricing, custom work, suggestions for future updates and others, please write them here and our team will get back to you as soon as possible.
+
+For the latest product updates, stay tuned on X (Twitter) https://x.com/prelineUI
+
+Thanks!`,
+    },
+  ]);
 
   async function handleSearchAndSendMessage() {
     if (search.trim() === '') {
@@ -78,7 +92,6 @@ export default function ChatComponent() {
               Powered by Google Gemini
             </p>
           </div>
-
           <div className="pr-4 h-[474px] overflow-y-auto">
             {messages.map((msg, index) => (
               <div
@@ -99,7 +112,7 @@ export default function ChatComponent() {
                     </svg>
                   </div>
                 </span>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed text-ellipsis">
                   <span className="block font-bold text-gray-700">
                     {msg.sender === 'user' ? 'You' : 'AI'}
                   </span>
