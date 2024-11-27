@@ -45,10 +45,10 @@ export default function Hero() {
                     <p className="ml-3 truncate font-medium text-white">
                       <span className="md:hidden">
                         {' '}
-                        ¡disfruta este mes de premium gratis! 🎉
+                        ¡Disfruta este mes de premium gratis! 🎉
                       </span>
                       <span className="hidden md:inline">
-                        ¡disfruta este mes de premium totalmente gratis por
+                        ¡Disfruta este mes de premium totalmente gratis por
                         nuestro gran lanzamiento! 🎉
                       </span>
                     </p>
