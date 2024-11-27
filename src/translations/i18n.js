@@ -26,6 +26,10 @@ i18n.use(initReactI18next).init({
         chat: 'Help chat',
         conf: 'Settings',
         profile: 'Profile',
+        discount:
+          'Enjoy this month of premium totally free for our big launch! 🎉',
+        discountMovil: 'Enjoy this month of free premium! 🎉',
+        Start: 'Get Started',
       },
     },
     es: {
@@ -51,6 +55,10 @@ i18n.use(initReactI18next).init({
         chat: 'Chat de ayuda',
         conf: 'Configuración',
         profile: 'Perfil',
+        discount:
+          '¡Disfruta este mes de premium totalmente gratis por nuestro gran lanzamiento! 🎉',
+        discountMovil: '¡Disfruta este mes de premium gratis! 🎉',
+        Start: 'Empezar',
       },
     },
   },
