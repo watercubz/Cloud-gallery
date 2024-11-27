@@ -1,12 +1,21 @@
 import toast from 'react-hot-toast';
 import useProfileInfo from '../../hooks/useProfileInfo';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Profile() {
   const { profileData, error, loading } = useProfileInfo();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleDeleteAccount = () => {
     toast.error('No diponblie.');
   };
+
+  // const isProfilePage = () => {
+  //   location('/connect');
+  // };
+
+  const isProfilePage = location.pathname === '/connect';
 
   if (loading) <p>cargando...</p>;
   if (error) <p>error...</p>;
@@ -47,11 +56,31 @@ export default function Profile() {
             </ul>
           </div>
 
-          <div className="col-span-2 hidden sm:block">
+          <div
+            className={`col-span-2 hidden sm:block ${isProfilePage ? 'w-16' : 'w-64'} transition-all duration-300`}
+          >
             <ul>
-              <li className="mt-5 cursor-pointer border-l-2 border-l-blue-700 px-2 py-2 font-semibold text-blue-700 transition hover:border-l-blue-700 hover:text-blue-700">
-                Accounts
-              </li>
+              {!isProfilePage ? (
+                <>
+                  <li className="mt-5 cursor-pointer border-l-2 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">
+                    Accounts
+                  </li>
+                  <li className="mt-5 cursor-pointer border-l-2 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">
+                    <button onClick={() => navigate('/connect')}>
+                      Integrations
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="mt-5 cursor-pointer border-l-2 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">
+                    🔒
+                  </li>
+                  <li className="mt-5 cursor-pointer border-l-2 border-transparent px-2 py-2 font-semibold transition hover:border-l-blue-700 hover:text-blue-700">
+                    ⚙️
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
