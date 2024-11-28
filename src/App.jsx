@@ -89,6 +89,7 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
   },
+
   {
     path: '/pricing',
     element: (
