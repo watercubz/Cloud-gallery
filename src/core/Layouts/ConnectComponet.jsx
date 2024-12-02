@@ -80,8 +80,8 @@ export default function ConnectAccount() {
                     <span className="flex-1 ms-3 whitespace-nowrap">
                       Facebook
                     </span>
-                    <span className="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-yellow-400 bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-400">
-                      Beta
+                    <span className="ml-2 bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300 whitespace-nowrap">
+                      BETA
                     </span>
                   </a>
                 </li>
@@ -100,7 +100,7 @@ export default function ConnectAccount() {
                   >
                     <path d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                   </svg>
-                  Why do I need to connect with my wallet?
+                  Why do I need to connect with my account?
                 </a>
               </div>
             </div>
