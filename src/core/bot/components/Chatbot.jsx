@@ -12,15 +12,8 @@ export default function ChatComponent() {
   const [messages, setMessages] = useState([
     {
       sender: 'AI',
-      text: `Hey there, thanks for checking out Preline UI!
-
-If you would like to report a bug or are having a technical issue, please open an issue on GitHub here: ${links}
-
-For any other inquiries, such as license, pricing, custom work, suggestions for future updates and others, please write them here and our team will get back to you as soon as possible.
-
-For the latest product updates, stay tuned on X (Twitter) https://x.com/prelineUI
-
-Thanks!`,
+      text: `¡Hola! Soy el asistente de MTAAI-core.
+             Estoy aquí para ayudarte con cualquier duda, problema o pregunta que tengas sobre nuestra plataforma. Si necesitas soporte técnico, más información sobre nuestros servicios o si te encuentras con algún inconveniente, solo házmelo saber. ¡Estoy para ayudarte en todo lo que necesites!`,
     },
   ]);
 

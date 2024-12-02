@@ -29,10 +29,6 @@ export default function Sidebar() {
     navigate('/profile');
   };
 
-  const handleConnectAccount = () => {
-    navigate('/connect');
-  };
-
   if (loading) <p>cargando...</p>;
   if (error) <p>error...</p>;
 
@@ -131,25 +127,6 @@ export default function Sidebar() {
               </svg>
               <button className="text-sm font-medium" onClick={handleProfile}>
                 {t('profile')}
-              </button>
-            </a>
-
-            <a className="flex items-center gap-2 p-2 text-gray-500 transition-colors duration-200 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark: hover:text-blue-500">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
-                <path d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
-              </svg>
-              <button
-                className="text-sm font-medium"
-                onClick={handleConnectAccount}
-              >
-                {t('conf')}
               </button>
             </a>
 
