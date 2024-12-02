@@ -1,20 +1,47 @@
 Copyright (c) [2024] Watercubz
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+Aquí tienes una versión en inglés estructurada con las condiciones adicionales que solicitaste:
 
-1. **Attribution Requirement**:  
-   You must give appropriate credit to the original author(s) and indicate if changes were made. This attribution should be visible in all substantial uses of the Software, including commercial ones.
+---
 
-2. **Commercial Use Allowed**:  
-   This Software may be used for commercial purposes, as long as attribution is provided as per the above condition.
+# Personal Use and Restricted Distribution License
 
-3. **Prohibition on User Data Collection for Sale**:  
-   The collection and sale of user data or any form of user information obtained through the Software are strictly prohibited.
+## 1. Personal and Non-Commercial Use Permissions  
+This software is open source and may be used, modified, and shared freely for **personal and non-commercial purposes**.
 
-4. **Prohibition on Improper Use**:  
-   If it is determined by the MTAAI-core team that the Software is being used improperly or in a manner that violates the terms outlined here, the team reserves the right to take appropriate action, including reporting and pursuing legal measures against the individual or entity involved.
+## 2. Commercial Use Restrictions  
+Commercial use, redistribution, or any modifications for profit are **strictly prohibited without prior written consent from the author**.  
+   - Interested parties must contact the author and undergo an evaluation process.  
+   - If commercial use is approved, the derivative product must clearly state on its website and documentation that it is based on this project and has obtained authorization.  
 
-5. **Disclaimer**:  
-   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+## 3. Minimum Contribution Requirement for Commercial Forks  
+To request approval for commercial use, any fork must meet the following criteria:  
+   - The contributor must have made at least **four (4) contributions** to this project.  
+   - At least **one (1) of these contributions must be significant**, such as bug fixes, new features, or substantial improvements.
 
-By using this Software, you agree to these terms.
+## 4. Prohibition of Illicit Activities  
+The author **disclaims all responsibility** for forks or derivative works used for fraudulent, harmful, or illegal activities.  
+   - Commercial forks must adhere to ethical guidelines and avoid any practices that could harm users or third parties.  
+
+## 5. Commercial Use Evaluation Criteria  
+Each request for commercial use will be assessed based on the following:  
+   - **Clear purpose of the commercial use:** A detailed explanation of how the software will be used.  
+   - **Transparent business model:** Disclosure of projected revenue and distribution of the derivative product.  
+   - **Commitment to ethical standards:** A pledge to avoid fraudulent or harmful activities.  
+
+## 6. Disclaimers and Liability  
+This software is provided "as is," without any warranties, express or implied.  
+The author is not liable for any damage, loss, or issues arising from the use of this software or from approved derivative works.  
+
+## 7. Author’s Declaration and Revocation Rights  
+The author reserves the right to **revoke commercial use approval** if any of the terms outlined in this license are violated.  
+
+---
+
+### How to Contact the Author  
+To request commercial use approval, email the author with:  
+1. A detailed description of the intended use.  
+2. Proof of at least 4 contributions to the original project, with a description of the significant contribution.  
+3. Documentation of the proposed business model.  
+
+---
