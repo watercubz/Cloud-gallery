@@ -1,7 +1,5 @@
 Copyright (c) [2024] Watercubz
 
-Aquí tienes una versión en inglés estructurada con las condiciones adicionales que solicitaste:
-
 ---
 
 # Personal Use and Restricted Distribution License
