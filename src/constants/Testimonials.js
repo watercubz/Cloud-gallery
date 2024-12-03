@@ -1,6 +1,0 @@
-export const testimonials = {
-  text1: `MTAAI-core has completely changed how I manage my social media ads. As a new entrepreneur, I was overwhelmed with ad management, but this platform made it easy. The AI optimizes my campaigns on Facebook and Instagram, and I’ve seen a noticeable increase in engagement. It’s like having a marketing expert on my team 24/7!`,
-  text2: `MTAAI-core has a user-friendly interface that even those with limited tech experience can navigate. The AI-driven recommendations are spot-on, helping me to manage ads effectively without needing to monitor them constantly. My ROI on ads has gone up since using MTAAI-core, and I love seeing the real-time analytics!`,
-  text3: `As a small business just starting with online ads, I needed something straightforward and affordable. MTAAI-core has been a game-changer. The customer support team is responsive and helped me understand how to leverage AI for my ads. I now feel like I’m in control of my marketing strategy, even with a limited budget!`,
-  text4: `MTAAI-core automates so much of the ad process that I can focus on other areas of my business. The AI tailors ads based on real-time engagement data from Facebook and Instagram, which I could never do manually. It’s saved me both time and money, and my campaigns are running more efficiently than ever!`,
-};
