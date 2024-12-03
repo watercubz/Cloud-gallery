@@ -196,11 +196,13 @@ export default function Sidebar() {
           isOpen && 'md:ml-64'
         }`}
       >
-        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
-          {t('panel')}
-        </h1>
         <p className="ml-2 mt-2">
-          <LanguageSwitcher />
+          <p className="font-Poppins text-sm text-gray-400">
+            Dashboards / Default
+          </p>
+          <h2 className="font-semibold text-2xl text-slate-800">
+            Main Dashboard
+          </h2>
         </p>
         <ConfirmationComponent />
         <ChatComponent />
