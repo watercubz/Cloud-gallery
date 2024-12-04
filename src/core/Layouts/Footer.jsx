@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '../../assets/img/MTAAI-core-icon.png';
 
 export default function Footer() {
@@ -46,12 +47,12 @@ export default function Footer() {
                   LEGAL
                 </div>
                 <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                  <a href="/terms" className="link link-hover">
+                  <Link to="/terms" className="link link-hover">
                     Terms of services
-                  </a>
-                  <a href="/terms" className="link link-hover">
+                  </Link>
+                  <Link to="/privacy" className="link link-hover">
                     Privacy policy
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
