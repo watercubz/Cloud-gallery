@@ -19,9 +19,9 @@ export default function Hero() {
     localStorage.setItem('promo', 'true');
   };
 
-  const handleLogin = () => {
-    navigate('/app');
-  };
+  // const handleLogin = () => {
+  //   navigate('/app');
+  // };
 
   const handlePremium = () => {
     navigate('/pricing');
@@ -56,12 +56,12 @@ export default function Hero() {
                     </p>
                   </div>
                   <div className="order-3 mt-2 w-full flex-shrink-0 sm:order-2 sm:mt-0 sm:w-auto">
-                    <button
-                      onClick={handleLogin}
+                    <a
+                      href='/app'
                       className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium text-black shadow-sm hover:bg-indigo-50"
                     >
                       {t('Start')}
-                    </button>
+                    </a>
                   </div>
                   <div className="order-2 flex-shrink-0 sm:order-3 sm:ml-2">
                     <button
