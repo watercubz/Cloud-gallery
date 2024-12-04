@@ -46,10 +46,10 @@ export default function FaqComponent() {
                 <div className="pb-5 leading-relaxed">
                   <div className="space-y-2 leading-relaxed">
                     {' '}
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Assumenda cum amet blanditiis quis vero saepe quo veritatis
-                    ab dicta ratione cumque, labore velit omnis sequi voluptatem
-                    harum distinctio reiciendis eveniet!
+                    MTAAI-core is a service designed for new entrepreneurs
+                    through our platform that integrates AI. You will be able to
+                    connect your networks, whether Facebook or Instagram, and
+                    manage your advertising and improve it through AI.
                   </div>
                 </div>
               </div>
@@ -90,10 +90,10 @@ export default function FaqComponent() {
                 <div className="pb-5 leading-relaxed">
                   <div className="space-y-2 leading-relaxed">
                     {' '}
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Assumenda cum amet blanditiis quis vero saepe quo veritatis
-                    ab dicta ratione cumque, labore velit omnis sequi voluptatem
-                    harum distinctio reiciendis eveniet!
+                    It&apos;s easy, all you have to do is log in with Githuhb or
+                    Google and if not, you can create an account using a Gmail
+                    and a password and then you can connect your Facebook or
+                    Instagram accounts and start using the platform.
                   </div>
                 </div>
               </div>
@@ -134,10 +134,10 @@ export default function FaqComponent() {
                 <div className="pb-5 leading-relaxed">
                   <div className="space-y-2 leading-relaxed">
                     {' '}
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Assumenda cum amet blanditiis quis vero saepe quo veritatis
-                    ab dicta ratione cumque, labore velit omnis sequi voluptatem
-                    harum distinctio reiciendis eveniet!
+                    Yes, you can cancel whenever you want without long, boring
+                    or stressful processes. You just have to go to your PayPal
+                    and from there you can cancel at any time without
+                    complications.
                   </div>
                 </div>
               </div>
@@ -178,10 +178,13 @@ export default function FaqComponent() {
                 <div className="pb-5 leading-relaxed">
                   <div className="space-y-2 leading-relaxed">
                     {' '}
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Assumenda cum amet blanditiis quis vero saepe quo veritatis
-                    ab dicta ratione cumque, labore velit omnis sequi voluptatem
-                    harum distinctio reiciendis eveniet!
+                    You can contact us through the various links that you find
+                    on the web and you can also join our discord server for
+                    support, even here you have an email where you can contact
+                    <strong className="text-green-400 hover:underline">
+                      {' '}
+                      eurysosagarcia@gmail.com
+                    </strong>
                   </div>
                 </div>
               </div>
