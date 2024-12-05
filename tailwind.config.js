@@ -9,7 +9,9 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { Poppins: ['Poppins', 'sans-serif'] },
+    },
   },
   plugins: [
     require('flowbite/plugin')({
