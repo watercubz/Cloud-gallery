@@ -29,14 +29,26 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
                   <a
-                    href="mailto:support@profitpage.net"
+                    href="mailto:eurysosagarcia@gmail.com"
                     className="link link-hover"
                     aria-label="Contact Support"
                   >
                     Support
                   </a>
-                  <a className="link link-hover">Discord</a>
-                  <a className="link link-hover">Twitter</a>
+                  <a
+                    className="link link-hover"
+                    href="https://discord.gg/KvpHYXC9GM"
+                    target="_blank"
+                  >
+                    Discord
+                  </a>
+                  <a
+                    className="link link-hover"
+                    href="https://twitter.com/watercubz"
+                    target="_blank"
+                  >
+                    Twitter
+                  </a>
                   <a href="#" className="link link-hover">
                     Feedback
                   </a>
