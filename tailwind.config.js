@@ -1,5 +1,6 @@
-/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
+
+import flowbitePlugin from 'flowbite/plugin';
 
 export default {
   content: [
@@ -14,7 +15,7 @@ export default {
     },
   },
   plugins: [
-    require('flowbite/plugin')({
+    flowbitePlugin({
       charts: true,
     }),
   ],
