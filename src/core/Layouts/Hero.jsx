@@ -147,13 +147,13 @@ export default function Hero() {
 
               {/* Desktop Menu */}
               <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
-                <a href="#pricing" className="nav-link">
+                <a href="#pricing" className="hover:underline">
                   Features
                 </a>
-                <a href="#pricing" className="nav-link">
+                <a href="#pricing" className="hover:underline">
                   Pricing
                 </a>
-                <a href="#FAQ" className="nav-link">
+                <a href="#FAQ" className="hover:underline">
                   FAQ
                 </a>
               </div>
@@ -178,11 +178,10 @@ export default function Hero() {
               <nav>
                 <div className="px-1 py-8">
                   <div className="grid gap-y-7">
-                    <a href="#princing" className="nav-link">
+                    <a href="#pricing" className="hover:underline">
                       Pricing
                     </a>
-                    <a href="#" className="nav-link"></a>
-                    <a href="#FAQ" className="nav-link">
+                    <a href="#FAQ" className="hover:underline">
                       FAQ
                     </a>
                     <a
@@ -215,7 +214,7 @@ export default function Hero() {
               </p>
               <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
                 <a
-                  href="#"
+                  href="/app"
                   className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                   role="button"
                 >
@@ -444,7 +443,7 @@ export default function Hero() {
                 <div className="text-gray-400 line-through">$12</div>
                 <div className="text-4xl font-extrabold text-black">$8.99</div>
                 <button
-                  onClick={handlePremium}
+                  // onClick={handlePremium}
                   className="mt-6 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800"
                 >
                   Get Premium!
