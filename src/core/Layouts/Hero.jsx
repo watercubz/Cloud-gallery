@@ -88,11 +88,10 @@ export default function Hero() {
         </div>
       )}
 
-      <div className="overflow-x-hidden bg-gray-50">
-        <header className="py-4 md:py-6">
+      <div className="overflow-x-hidden bg-gray-50 ">
+        <header className="py-4 md:py-6 scroll-smooth">
           <div className="container px-4 mx-auto sm:px-6 lg:px-8">
             <div className="flex items-center justify-between">
-              {/* Logo */}
               <div className="flex-shrink-0">
                 <a
                   href="#"
@@ -103,7 +102,6 @@ export default function Hero() {
                 </a>
               </div>
 
-              {/* Mobile Menu Button */}
               <div className="flex lg:hidden">
                 <button
                   type="button"
@@ -145,7 +143,6 @@ export default function Hero() {
                 </button>
               </div>
 
-              {/* Desktop Menu */}
               <div className="hidden lg:flex lg:ml-16 lg:items-center lg:justify-center lg:space-x-10 xl:space-x-16">
                 <a href="#pricing" className="hover:underline">
                   Features
@@ -158,9 +155,8 @@ export default function Hero() {
                 </a>
               </div>
 
-              {/* Call to Actions */}
               <div className="hidden lg:ml-auto lg:flex lg:items-center lg:space-x-10">
-                <a href="/app" className="nav-link">
+                <a href="#" className="nav-link">
                   Customer Login
                 </a>
                 <a
@@ -173,7 +169,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Mobile Menu */}
             {isExpanded && (
               <nav>
                 <div className="px-1 py-8">
@@ -198,7 +193,6 @@ export default function Hero() {
           </div>
         </header>
 
-        {/* Hero Section */}
         <section className="pt-12 bg-gray-50 sm:pt-16">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center">
@@ -214,7 +208,7 @@ export default function Hero() {
               </p>
               <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
                 <a
-                  href="/app"
+                  href="#"
                   className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                   role="button"
                 >
@@ -240,7 +234,7 @@ export default function Hero() {
                 </a>
               </div>
               <p className="mt-8 text-base text-gray-500 font-inter">
-                30 Days free trial · No credit card required
+                7 Days free trial · No credit card required
               </p>
             </div>
           </div>
@@ -391,7 +385,6 @@ export default function Hero() {
             Are you ready to improve that?
           </h2>
           <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8">
-            {/* Features Section */}
             <div className="w-full lg:w-1/3 text-left">
               <h3 className="text-lg font-bold mb-4">Features</h3>
               <ul className="space-y-2">
@@ -429,7 +422,7 @@ export default function Hero() {
                 <div className="text-4xl font-extrabold text-black">$0.00</div>
                 <button
                   disabled={true}
-                  className="mt-6 px-6 py-2 bg-black text-white rounded-full hover:bg-gray-800 cursor-none"
+                  className="mt-6 px-6 py-2 bg-gray-400 text-white rounded-full"
                 >
                   Free
                 </button>
