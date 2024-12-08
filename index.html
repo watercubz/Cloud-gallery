@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,14 +20,34 @@
       property="og:description"
       content="Plataforma para mejorar tu publicidad utilizando inteligencia artificial y aumentar la eficiencia de tus campañas."
     />
-    <meta property="og:url" content="https://mtaai-core.vercel.app/" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LC0NFX9DZJ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-LC0NFX9DZJ');
+    </script>
+
+    <meta property="og:url" content="https://mtaai-core.lat" />
     <meta property="og:type" content="website" />
 
     <meta name="author" content="MTAAI-core" />
 
-    <link rel="icon" type="image/svg+xml" href="/MTAAI-core.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/src/assets/img/target-mtaai-icon.svg"
+    />
 
-    <title>MTAAI-core - Maximiza tu publicidad con IA</title>
+    <title>MTAAI-core</title>
   </head>
 
   <body>
