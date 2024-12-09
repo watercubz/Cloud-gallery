@@ -2,7 +2,7 @@ import Footer from './Footer';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import hero_dashboard from '../../assets/img/313shots_so.png';
+import hero_dashboard from '../../assets/img/242shots_so.png';
 import FaqComponent from './Faq-component';
 import logo from '../../assets/img/MTAAI-core-icon.png';
 
@@ -160,7 +160,7 @@ export default function Hero() {
                   Customer Login
                 </a>
                 <a
-                  href="/app"
+                  // href="/app"
                   className="inline-flex items-center justify-center px-6 py-3 text-base font-bold leading-7 text-white transition-all duration-200 bg-gray-900 border border-transparent rounded-xl hover:bg-gray-600 font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                   role="button"
                 >
@@ -180,7 +180,7 @@ export default function Hero() {
                       FAQ
                     </a>
                     <a
-                      href="/app"
+                      // href="/app"
                       className="inline-flex items-center justify-center px-6 py-3 text-base font-bold leading-7 text-white bg-gray-900 rounded-xl"
                       role="button"
                     >
@@ -208,7 +208,7 @@ export default function Hero() {
               </p>
               <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
                 <a
-                  href="#"
+                  // href="/app"
                   className="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
                   role="button"
                 >
@@ -441,7 +441,7 @@ export default function Hero() {
                 >
                   Get Premium!
                 </button>
-                <p className="mt-3 text-gray-500 text-sm">30-day free trial.</p>
+                <p className="mt-3 text-gray-500 text-sm">7-day free trial.</p>
               </div>
             </div>
           </div>
